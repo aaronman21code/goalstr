@@ -1,0 +1,17 @@
+@media print {
+  :root { color-scheme: light; --bg: #fff; --surface: #fff; --raised: #fff; --line: #ccc; --text: #111; --muted: #333; --subtle: #444; --mint: #244d34; --mint-dim: #f2f5f2; }
+  body { background: white !important; color: #111 !important; font-size: 11pt; }
+  .learn-toolbar, .storage-notice, .skip-link, .button, .back-link { display: none !important; }
+  .card, .learning-boundaries > div { background: white !important; border-color: #ccc !important; border-radius: 0 !important; break-inside: avoid; }
+  .learn-section, .nip-row { break-inside: avoid; }
+  .learn-section { margin: 20px 0 !important; }
+  .eyebrow { color: #244d34 !important; }
+  p, .caption, code, h1, h2, h3 { color: #111 !important; }
+  h1 { font-size: 25pt; } h2 { font-size: 16pt; }
+  code { font-size: 8pt !important; }
+  pre { white-space: pre-wrap; background: white !important; border-color: #ccc !important; }
+  a { color: #244d34 !important; }
+  details > p { display: block !important; }
+  .checkpoint { border-color: #ccc !important; }
+  .page-heading { margin-bottom: 15px !important; }
+}

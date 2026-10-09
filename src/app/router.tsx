@@ -1,0 +1,5 @@
+import { useEffect, useState } from 'react';
+export function navigate(path: string): void { if (`${location.pathname}${location.search}` === path)
+    return; history.pushState(null, '', path); window.dispatchEvent(new PopStateEvent('popstate')); window.scrollTo({ top: 0, behavior: 'instant' }); }
+export function useRoute(): string { const [route, setRoute] = useState(location.pathname + location.search); useEffect(() => { const handle = () => setRoute(location.pathname + location.search); window.addEventListener('popstate', handle); return () => window.removeEventListener('popstate', handle); }, []); return route; }
+export function useNow(): number { const [now, setNow] = useState(() => Math.floor(Date.now() / 1000)); useEffect(() => { const refresh = () => setNow(Math.floor(Date.now() / 1000)); const timer = setInterval(refresh, 15000); window.addEventListener('focus', refresh); document.addEventListener('visibilitychange', refresh); return () => { clearInterval(timer); window.removeEventListener('focus', refresh); document.removeEventListener('visibilitychange', refresh); }; }, []); return now; }

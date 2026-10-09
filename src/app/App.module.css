@@ -1,0 +1,32 @@
+.shell { min-height: 100dvh; max-width: 1040px; padding: 0 28px; margin: 0 auto; }
+.header { display: flex; align-items: center; justify-content: space-between; min-height: 100px; border-bottom: 1px solid var(--line); gap: 16px; }
+.brand { display: inline-flex; align-items: center; color: var(--text); text-decoration: none; font-size: 29px; letter-spacing: -1.4px; font-weight: 760; }
+.brandMark { width: 42px; height: 42px; display: grid; place-items: center; background: var(--mint-dim); border-radius: 12px; margin-right: 12px; color: var(--mint); }
+.headerRight { display: flex; align-items: center; gap: 12px; }
+.navigation { display: flex; gap: 10px; margin: 22px 0 6px; }
+.navItem { color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 9px; padding: 11px 20px; min-height: 46px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 550; }
+.navItem:hover { background: var(--surface); color: var(--text); }
+.navActive { color: var(--mint); background: var(--mint-dim); }
+.main { max-width: 780px; margin: 0 auto; padding: 34px 0 40px; outline: none; }
+.welcomeMain { max-width: 920px; }
+.footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 22px 0 28px; border-top: 1px solid var(--line); color: var(--subtle); font-size: 12px; }
+.footer a { display: flex; align-items: center; gap: 5px; color: var(--muted); text-decoration: none; }
+@media (max-width: 680px) {
+  .shell { padding: 0 20px; }
+  .header { min-height: 80px; }
+  .headerRight { gap: 5px; }
+  .header { gap: 8px; }
+  .brandMark svg { width: 29px; height: 29px; }
+  .headerRight :global(.save-label) { display: none; }
+  .brand { font-size: 26px; }
+  .brandMark { width: 35px; height: 35px; border-radius: 10px; margin-right: 9px; }
+  .navigation { position: fixed; bottom: 0; left: 0; right: 0; z-index: 10; border-top: 1px solid var(--line); background: #171a20; padding: 7px 10px max(8px, env(safe-area-inset-bottom)); margin: 0; gap: 0; }
+  .navItem { flex: 1; flex-direction: column; gap: 4px; font-size: 11px; padding: 6px 3px; min-height: 52px; border-radius: 9px; }
+  .main { padding: 30px 0 32px; }
+  .footer { font-size: 11px; padding-bottom: 105px; }
+}
+@media (max-width: 359px) {
+  .brandMark { display: none; }
+  .brand { font-size: 24px; letter-spacing: -1px; }
+}
+@media print { .header, .navigation, .footer { display: none; } .shell { padding: 0; max-width: none; } .main { padding: 0; max-width: none; } }

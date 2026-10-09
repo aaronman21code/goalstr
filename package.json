@@ -1,0 +1,33 @@
+{
+  "name": "goalstr",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.domain.json",
+    "lint": "node scripts/check-boundaries.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:e2e": "node tests/browser.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "1.31.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "@vitejs/plugin-react": "6.0.5",
+    "typescript": "6.0.3",
+    "vite": "8.2.1"
+  },
+  "description": "Goalstr \u2014 daily goals and accountability, built in stages on Nostr."
+}

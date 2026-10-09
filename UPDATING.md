@@ -1,0 +1,33 @@
+# Updating Goalstr
+
+Keep one `goalstr` GitHub repo and one Vercel project.
+
+## First stage
+
+Extract the ZIP and copy its contents to the repository root. `package.json` must be at the root; do not upload a ZIP or nest another project folder inside the repo. Commit all source/configuration files, including dotfiles. Then import that repo into Vercel once.
+
+## Every later stage
+
+1. Download and extract the next complete-stage ZIP to a separate folder.
+2. Read its `CHANGELOG.md`, `release.json`, and `REMOVED_FILES.txt`.
+3. Copy all release files over the files in the same local GitHub repo. Preserve your repo's `.git/`, local `.env` files, and deployment credentials; those are never release files. Do not copy `node_modules/`, `dist/`, or test screenshots.
+4. Remove only the paths listed in `REMOVED_FILES.txt`. Copying files cannot remove an obsolete file, so this step matters when a module is renamed or retired.
+5. Review changes with GitHub Desktop or `git status`. If you have local code changes, compare and preserve them before overwriting their files.
+6. Run the verification commands in the README when possible. Commit the whole stage and push to the same repo. Vercel's Git integration builds the update.
+7. Check the CI result and deployed app. Try one plan, an update, review, and refresh. If you use a preview branch, merge it into your configured production branch after checking.
+
+You can use GitHub's upload UI instead: upload the extracted folders/files, then separately remove any listed obsolete paths. Include configuration dotfiles. GitHub Desktop is simpler when there are many changes.
+
+## Release contents
+
+`release.json` records the stage, version, schema version, prior-stage baseline, and included files with SHA-256 hashes. Every release is self-contained; you do not have to collect small patches from earlier downloads. `REMOVED_FILES.txt` lists code/configuration paths removed since the previous stage. The original Stage 1 had none. Version 0.1.1 renames the two reference documents; remove their old paths only if you already uploaded version 0.1.0.
+
+## Local data and rollback
+
+App data lives in the browser, not in the code ZIP or GitHub repo. Same-origin deployments keep the stable Practice database unless the user clears it or the browser removes it. Export a backup before trying a storage migration. A new hostname or Vercel preview URL starts with a different browser store.
+
+Each later stage must preserve or migrate existing data explicitly. Its release notes must say whether rolling back can read data written by the newer version. Stage 1 writes schema version 1. Rolling back code does not itself roll back browser data.
+
+## Work between stages
+
+Keep this ZIP as the current source checkpoint. When continuing here after changing the source elsewhere, attach the latest source ZIP or a patch so the next stage starts from your actual code. Otherwise we continue from the last release generated in this conversation.
