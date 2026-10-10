@@ -1,5 +1,13 @@
 # Goalstr releases
 
+## 0.3.0 — Stage 3 — 10 October 2026
+
+Replaces the People placeholder with a lazy public read-only feed, verified finite WSS relay queries, profile hydration, public day/profile/nostr: links, NIP-11 information, NIP-65 author-write routing, missing-root/parent/deletion retrieval, overlap pagination and partial/disconnected/unsupported states. Adds scoped NIP-19/21 modules, resource deadlines/caps/cancellation, read diagnostics and lessons.
+
+Includes 26 new read-path tests (75 total), CI browser scenarios, exact changed-file report, LF normalization and persistent build-progress/timeout rules. Node tests, type checks, boundary lint, vendor integrity and production build pass. Browser and real pilot/hosted checks remain pending. No new npm dependency, environment variable, signer or publishing capability is added.
+
+No files removed from 0.2.0. Practice schema/database/backup remain version 1 with no migration.
+
 ## 0.2.0 — Stage 2 — 9 October 2026
 
 Adds an opt-in, lazy-loaded protocol lab; exact v1 schema/codec and plaintext generation; real event hash/Schnorr verification; deterministic reconstruction, duplicate-root/branch selection, resolution previews, pending dependencies, future-time quarantine, conversation isolation, and authorized deletion handling. Includes 30 public fixtures, checksum-pinned licensed upstream cryptography, official BIP-340 vectors, 26 protocol tests, expanded browser scenarios, and exact update/contract documentation.

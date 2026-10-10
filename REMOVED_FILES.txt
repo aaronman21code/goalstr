@@ -1,4 +1,2 @@
-# No files removed since Goalstr Stage 1 (0.1.1).
-# Historical cleanup only if using the earlier 0.1.0 release:
-# docs/reference/Daily_Accountability_Prototype_PRD.md
-# docs/reference/Daily_Accountability_Prototype_Build_Plan.md
+# Goalstr Stage 3 / 0.3.0
+# No files removed since Stage 2 / 0.2.0.

@@ -1,4 +1,4 @@
-# Goalstr · Stage 1 boundaries
+# Goalstr architecture
 
 The application is a modular monolith. `src/app` assembles the concrete store, clock, and Practice service. React features read a service snapshot and invoke commands. Pure domain functions decide the result; the store port persists it.
 
@@ -26,7 +26,7 @@ Live stages add `protocol/accountability/v1` and scoped NIP adapters. Verified e
 
 ## Staged deployment
 
-The project is host-portable. Vercel builds `dist` from source, with SPA deep-link rewrites. CSP in Stage 1 allows only same-origin resources. Future WSS relay support must change the policy deliberately without enabling arbitrary scripts or leaking connection credentials.
+The project is host-portable. Vercel builds `dist` from source, with SPA deep-link rewrites. Stage 3 CSP allows secure WSS relay and HTTPS metadata connections. Scripts remain same-origin, external images stay disabled, and queries carry no connection credentials.
 
 The stable Practice database is separate from future account-scoped live stores. Later releases must include versioned migrations and rollback compatibility notes. A complete source ZIP, hashes, removed paths, and changelog make manual GitHub updates reviewable.
 
@@ -35,3 +35,9 @@ The stable Practice database is separate from future account-scoped live stores.
 `ProtocolView` is lazy-loaded and calls `learning/protocol-service.ts`. The service invokes the versioned codec, which verifies the envelope through the scoped NIP-01 adapter before schema/thread decoding. NIP-10 owns threading and the NIP-09 reader owns deletion target parsing. `domain/events/reconstruct.ts` consumes decoded records and reuses the existing pure accountability rules without writing to Practice storage. Typed `EventVerifierPort` and `AccountabilityCodec` interfaces carry plain data only.
 
 The protocol lab imports public signed fixtures, not their generating identities. It stores imported events and generated unsigned previews in component memory only. Actual relay transport/outbox/signers remain later-stage adapters. The vendored upstream crypto source is isolated under `vendor/`; only the NIP-01 adapter and test generator import it. Domain compilation includes both accountability and event graph modules and forbids SDK/React/Zod imports.
+
+## Stage 3 read boundary
+
+The lazy Public view gets a fresh service from the app composition root. `public/types.ts` defines finite read ports; `public/service.ts` batches discovery, metadata, author relay routing, visible-card threads and targeted dependencies. The infrastructure pool owns shared sockets, deadlines, cancellation, fresh verification and exact filter matching. NIP-11 information, NIP-19 identifiers, NIP-21 links and NIP-65 lists remain scoped adapters. Domain reconstruction is unchanged. See READ_PATH.md for module ownership and STAGE_03.md for explicit bounds.
+
+The public cache is memory-only and separate from Practice. Leaving the route aborts and disposes network work; StrictMode creates a fresh service on each effect setup. Public cards never invoke Practice commands, signers or publication. Snapshots refresh through finite reads; they are not an unbounded live subscription.

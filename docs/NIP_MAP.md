@@ -1,6 +1,6 @@
 # Goalstr protocol coverage
 
-Stage 2 implements local verification/codec subsets for NIP-01, NIP-10, and NIP-09 plus the Goalstr v1 application schema. Network transport, signers, profiles, and social integrations remain later-stage work. The table shows milestone ownership; the working subsets are listed below.
+Stages 2–3 implement verified event/codec/reconstruction subsets, finite NIP-01 public queries and profiles, NIP-11 information, public NIP-19/NIP-21 links, and NIP-65 read routing. Signers, publication, authentication and social mutations remain later-stage work. The table shows milestone ownership; the working subsets are listed below.
 
 | NIP | Module / use | Stage |
 | --- | --- | --- |
@@ -32,3 +32,15 @@ The frozen custom tag `['accountability','1',type,payloadJson]` is an app conven
 | `accountability/v1` | All seven types, exact schema, readable notes, parent-based invariants, conflicts/resolution/future policy | Live signed command/outbox services |
 
 No NIP integration is called fully complete merely because its Stage 2 parsing/validation subset works. The protocol lab makes these distinctions visible.
+
+## Stage 3 working read subsets
+
+| NIP | Working subset | Remaining scope |
+| --- | --- | --- |
+| 01 | Shared bounded WSS sockets, finite REQ/CLOSE reads, active-subscription matching, fresh verification, EOSE/CLOSED/auth-needed facts, kind-0 fallback | Publication/OK facts and durable outbox in Stage 4; unbounded live streaming excluded |
+| 11 | Bounded HTTPS Accept request and optional information/limits parsing | Runtime policy remains authoritative; advertised limits do not guarantee history or acceptance |
+| 19 / 21 | npub/nprofile/note/nevent and nostr: input; checksums, TLV, bounded untrusted hints; public routes | naddr/QR and broader URI rendering remain extensions |
+| 65 | Latest verified author list, write-relay reads within cap | List editing, publishing destinations and mention routing in later stages |
+| 10 / 09 | Real thread/dependency reads and author-authorized explicit deletion reconstruction | Reply/own-deletion publication later |
+
+Primary specifications were reviewed on 10 October 2026; see READ_PATH.md. Live pilot/hosted/browser checks are pending, despite passing deterministic transport/service tests. No full-NIP or full-prototype completion is implied.

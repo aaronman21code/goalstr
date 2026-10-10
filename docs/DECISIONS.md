@@ -47,3 +47,15 @@ A lazy-loaded optional route verifies public fixture/imported events and reconst
 ## D011 — Baseline and remaining UI evidence
 
 The supplied GitHub/deployed URLs could not be retrieved from this environment, so the update starts from the previously generated Goalstr 0.1.1 source. The user retains deployment ownership. Node/contract/security-boundary checks pass; the actual browser/hosted UI gate remains pending until the included CI browser scenarios or deployed checks run.
+
+## D012 — Stage 3 finite native read port
+
+Blocked registry/pilot probes were limited to five seconds each and not retried indefinitely. Use a native WebSocket finite-query adapter behind RelayReaderPort; do not claim an installed nostr SDK. Keep one socket per relay, eight destinations, six-second queries, one jittered disconnect retry, thirty-second operations, verified event/frame budgets, and route teardown. EOSE closes the read subscription; manual Refresh starts a new observation. No publishing or authentication capability is added.
+
+## D013 — Public identifiers, media and routing
+
+Public IDs use tested NIP-19 Bech32/TLV encoding/error checks and NIP-21 routes, not new cryptographic primitives. Reject private-key/connection identifiers; validate and cap untrusted relay hints/lists. Download author events from advertised write relays. Profiles use escaped bounded names/bios and local initial avatars; no external tracking images. NIP-11 failure is independent of WSS availability. Read caches/config are session-only.
+
+## D014 — Reviewable updates and bounded work
+
+User confirmed Stage 2 deployed; Stage 3 starts from the shipped 0.2.0 source, with remote comparison unavailable. A hash-based changed-file report and LF normalization make ZIP updates reviewable. Use one stage branch/PR and release tag per checkpoint. AGENTS.md persists the active-work progress and bounded-probe rules after the earlier stalled remote-browser check. Browser and real pilot checks remain explicit pending gates, not passing claims.

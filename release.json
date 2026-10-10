@@ -1,23 +1,26 @@
 {
   "project": "goalstr",
   "displayName": "Goalstr",
-  "version": "0.2.0",
-  "stage": 2,
-  "previousStage": 1,
-  "previousVersion": "0.1.1",
-  "created": "2026-10-09",
+  "version": "0.3.0",
+  "stage": 3,
+  "previousStage": 2,
+  "previousVersion": "0.2.0",
+  "created": "2026-10-10",
   "storageSchemaVersion": 1,
   "protocolContract": "goalstr-v1",
   "removedFiles": [],
+  "changeReport": "CHANGES_STAGE_03.md",
   "compatibility": {
     "practiceData": "preserved; no migration",
     "practiceBackups": "schema 1 retained",
-    "livePublication": "not implemented in this stage"
+    "publicCache": "session-only",
+    "livePublication": "not implemented; Stage 4"
   },
   "baseline": {
-    "source": "Previously generated Goalstr Stage 1 version 0.1.1",
+    "source": "Shipped Goalstr Stage 2 version 0.2.0, confirmed deployed by user",
+    "sourceZipSha256": "8abd9c715a04aa647d8024f5bcff67466e3e3b6c9917dc789b8d2e00e22ee80f",
     "repository": "https://github.com/aaronman21code/goalstr",
-    "upstreamComparison": "unavailable in build environment"
+    "upstreamComparison": "unavailable: bounded remote probe failed"
   },
   "verification": {
     "typecheck": "passed",
@@ -25,12 +28,20 @@
     "vendorIntegrity": "passed",
     "domainAndStorageTests": "23 passed",
     "protocolTests": "26 passed",
+    "readPathTests": "26 passed",
+    "totalTests": 75,
     "officialBip340Vectors": "19 passed inside protocol suite",
     "productionBuild": "passed",
-    "browserScenarios": "pending: runtime unavailable; CI scenarios supplied",
-    "hostedDeployment": "user updates existing GitHub/Vercel project"
+    "browserScenarios": "pending: executable absent; CI scenarios supplied",
+    "realPilotReads": "pending: bounded probes failed with 403/timeouts",
+    "hostedDeployment": "user reviews stage branch/PR and deploys through existing GitHub/Vercel project"
   },
   "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 112,
+      "sha256": "d416ac94f6d594d543cfcf45de0fa0ea3be8960a505f4cbffaaa631c040660e9"
+    },
     {
       "path": ".github/workflows/ci.yml",
       "bytes": 661,
@@ -47,19 +58,29 @@
       "sha256": "68ca3fba3b7e864770cb61aeb306d4bd4354b68ab4dd38450860c5d823e42a53"
     },
     {
+      "path": "AGENTS.md",
+      "bytes": 1517,
+      "sha256": "4da705c2bd1ed0f51ad92afa492bf1b56830f95b66fda6b1a2a419898d8aa622"
+    },
+    {
       "path": "CHANGELOG.md",
-      "bytes": 2581,
-      "sha256": "00104b97962c040ff586bfcdae98b3efe8f76c79c9a2611833b334a999a56c9b"
+      "bytes": 3508,
+      "sha256": "40c04e34790dd55e0bee920a9e182ad9171bd9605aa7c53334b29545b06f90b1"
+    },
+    {
+      "path": "CHANGES_STAGE_03.md",
+      "bytes": 2296,
+      "sha256": "723fc8b9f4243c587b4c9e26124629435b02f20b4a9575f4e8030e02b23ec553"
     },
     {
       "path": "docs/ACCEPTANCE.md",
-      "bytes": 3984,
-      "sha256": "a8c7a47e2e8fb45cecc1735f2a520616034064ac00b9d8b336835e90a59b84cd"
+      "bytes": 5333,
+      "sha256": "784d5e09105b3fdcbffb505437319407887679335d709250283a122f57afd0c4"
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 4195,
-      "sha256": "f27c48039d92ec5c188f9c3bf4627494683e00e0c1bc89efc28d53c60440e1e7"
+      "bytes": 5086,
+      "sha256": "34106bbae6b0a5f91165b8e196f34006f476181f4e8cce5909422e9b3bf5eaae"
     },
     {
       "path": "docs/contracts/GOALSTR_V1.md",
@@ -73,18 +94,23 @@
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 5072,
-      "sha256": "3503ca7d8015bc4444f518d85bc6e3057a108cf4ec6f6122da6e05fae50cbb10"
+      "bytes": 6614,
+      "sha256": "ce87ac89cbc9a65e61e5e8f81d8d6ab0ef5584696c6e1fb3f5c4bd5bc9e9b17b"
     },
     {
       "path": "docs/LEARN.md",
-      "bytes": 3709,
-      "sha256": "e1269e6d7359c69991890852710a49fb94e2f9e27aa3a169e6995eb4300cfa44"
+      "bytes": 4922,
+      "sha256": "199c6903e0de18a8a3c043db52dce2e8c5b0cd0d1a523604cc95b2f616f23a35"
     },
     {
       "path": "docs/NIP_MAP.md",
-      "bytes": 2554,
-      "sha256": "0b5ab20722a968183aaf9c81fc62f96f5fb25e2bab484dd22962fee38aaf1695"
+      "bytes": 3807,
+      "sha256": "57edd4f4acbd9a8dc1db13a51755507c158f2f60b02a4960c6b2b552f1dbcc4d"
+    },
+    {
+      "path": "docs/READ_PATH.md",
+      "bytes": 4130,
+      "sha256": "ee34262000ca23fbb380374805a7eae73b32d5238bded200433d1f2e26001c40"
     },
     {
       "path": "docs/reference/Goalstr_Prototype_Build_Plan.md",
@@ -102,6 +128,11 @@
       "sha256": "557c0b87b0521ac912ae5458e883140580d0f197f6e16c47c9803902df5b953b"
     },
     {
+      "path": "docs/STAGE_03.md",
+      "bytes": 7152,
+      "sha256": "34c2725993e1fea8746abe9eda1d1e70aff0fb8f00e2269da103b25a2446cb98"
+    },
+    {
       "path": "index.html",
       "bytes": 949,
       "sha256": "0b2f33185a28671eff1400bc46f91f727417ad84332adcf9068a2df76b25c671"
@@ -109,12 +140,12 @@
     {
       "path": "package-lock.json",
       "bytes": 29656,
-      "sha256": "5c8ef96b51ad7d1d1f8ba04d0aa1611d09b1de85c67277229d73be87779eb798"
+      "sha256": "15f331ade05ef1049904049a2f095f24ed76b90b5350a267d967e743181076af"
     },
     {
       "path": "package.json",
-      "bytes": 1079,
-      "sha256": "ac0015ecfc1f6d6c561e11a45d263e3ef09240317f2b863919c8738a84b7fe30"
+      "bytes": 1106,
+      "sha256": "03c313fa7ef4f9993aff4e57d1307404a7d64e124e22460a709fe1373673d695"
     },
     {
       "path": "public/favicon.svg",
@@ -128,13 +159,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 9778,
-      "sha256": "ba67fabc3d3d6e3a0326b50e812a1f10511f477518a6c7faabc43d365202bc9a"
+      "bytes": 10524,
+      "sha256": "c094efdb5c79b27377bce4119ab89573d344a1e5dcd97aacea2719c6630bbd11"
     },
     {
       "path": "REMOVED_FILES.txt",
-      "bytes": 229,
-      "sha256": "f9bf4e3902f55079183232cd06ed226c6855ad6c0f24de16486cb4a057b74217"
+      "bytes": 68,
+      "sha256": "3be08c5aef0de23843ea55843b24ff9f504b30970be1127af864894f996f4905"
     },
     {
       "path": "scripts/check-boundaries.mjs",
@@ -148,8 +179,8 @@
     },
     {
       "path": "scripts/release-manifest.mjs",
-      "bytes": 1948,
-      "sha256": "4e7cbfbdfea945196c73c7eecbb4b59281063135af32f5fe3310234f177cf008"
+      "bytes": 2304,
+      "sha256": "1c78fe9411d75565571ea592e8c3058aa40a451baad8dbdb4bd9dad3692abd30"
     },
     {
       "path": "scripts/verify-vendor.mjs",
@@ -163,13 +194,18 @@
     },
     {
       "path": "src/app/App.tsx",
-      "bytes": 9512,
-      "sha256": "95b1c72a27a2fd7883a949487ddfe7aa91ab24441feb03e5b0c1b77ce6cf0249"
+      "bytes": 9278,
+      "sha256": "f8dae082c4b92aea4663df0d641499207995c40608a033877d701d0ae78368e7"
     },
     {
       "path": "src/app/context.tsx",
       "bytes": 774,
       "sha256": "aef9fa5c383047472cacfea305532c95c1b00e64d9a75f8f87d33291fdbf6764"
+    },
+    {
+      "path": "src/app/public-service.ts",
+      "bytes": 316,
+      "sha256": "b91702e24aa6a53037ed15fbf1659530972bfcee73939a22063fa34aa4fea1a5"
     },
     {
       "path": "src/app/router.tsx",
@@ -213,8 +249,18 @@
     },
     {
       "path": "src/features/profile/ProfileView.tsx",
-      "bytes": 3916,
-      "sha256": "272e3397912099c6334bbed19aea494f30bc2c6efeb0262df858f8e20cee8636"
+      "bytes": 4120,
+      "sha256": "af19fb5a5bb0038c89b76d3b9ee32b802918043b97fe4a8714ee53c711ffdaf8"
+    },
+    {
+      "path": "src/features/public/PublicView.module.css",
+      "bytes": 5296,
+      "sha256": "d4470c679615376c59ee9aab1a6d7d2858036b43ef7b2693819f5184dddb0b97"
+    },
+    {
+      "path": "src/features/public/PublicView.tsx",
+      "bytes": 14730,
+      "sha256": "82344b559ca119302e048eced9a0232112c997f091743aaa98950040865ed064"
     },
     {
       "path": "src/features/settings/SettingsView.tsx",
@@ -242,6 +288,21 @@
       "sha256": "b9261f300cdeb3b97fb1e097417edaf2d0b3dd9f8d140047a89b688faa39904a"
     },
     {
+      "path": "src/infrastructure/relays/information.ts",
+      "bytes": 1919,
+      "sha256": "ead7ae153075fa8689126f8fd59ca907bbdc99cc8f99498fcd843ee37dd87804"
+    },
+    {
+      "path": "src/infrastructure/relays/pool.ts",
+      "bytes": 11116,
+      "sha256": "2299a3162cad07eadca24f003a9419138f0b7fe88e756033a596573ee41e6df9"
+    },
+    {
+      "path": "src/infrastructure/relays/urls.ts",
+      "bytes": 1410,
+      "sha256": "5823b7e297c25ef67da43eb6c5602cda6865b5e7229fe519e1f8a80abece2b73"
+    },
+    {
       "path": "src/infrastructure/storage/document-schema.ts",
       "bytes": 3879,
       "sha256": "38569d035d62bc60752fb458e64332ed9eb0c4dd45707f86f4c8869fcf2dc416"
@@ -258,8 +319,8 @@
     },
     {
       "path": "src/learning/LearnView.tsx",
-      "bytes": 5481,
-      "sha256": "85fc4005c7dfeabd6e5cf467f383866382d45af3a42f11afa092a30333f6c7e6"
+      "bytes": 6316,
+      "sha256": "d3478701939c156d2b364ba3c4834a96d47a73a182e7a128db6954bd45d2dbe7"
     },
     {
       "path": "src/learning/protocol-service.ts",
@@ -312,6 +373,11 @@
       "sha256": "5192ace42639f6871c84fc7c3be60e8719158c03b23a997d31347a0c00640ba9"
     },
     {
+      "path": "src/protocol/nips/01/profiles.ts",
+      "bytes": 1228,
+      "sha256": "535d41bf710c6740ae908af0884b9605670d3cf35d4678508c6361ddeca441bf"
+    },
+    {
       "path": "src/protocol/nips/09/deletions.ts",
       "bytes": 513,
       "sha256": "c5d9dcc223dc6be9a933fdbe88bfa599d911949d6972bd137e7b1263b0e9e4c0"
@@ -320,6 +386,36 @@
       "path": "src/protocol/nips/10/tags.ts",
       "bytes": 1288,
       "sha256": "8a4dfbb5a824bff60db7cd543aa1e063a871a823834a7e3221ab63bbbe432c54"
+    },
+    {
+      "path": "src/protocol/nips/11/information.ts",
+      "bytes": 1081,
+      "sha256": "b335e80cde77dcee27db6a67a48fa48a3bd39cd18ef5b7e87e7c6e8b2268223f"
+    },
+    {
+      "path": "src/protocol/nips/19/identifiers.ts",
+      "bytes": 4541,
+      "sha256": "cbdeda69dbd6fcfce84b5184abcd62881a105fea050ceb1ab8b960ff09b3b896"
+    },
+    {
+      "path": "src/protocol/nips/21/links.ts",
+      "bytes": 2405,
+      "sha256": "19a5fd863bb8e8ae09edfbda0442a7adb15791f99dbf2d30085b1b69f970262d"
+    },
+    {
+      "path": "src/protocol/nips/65/relay-list.ts",
+      "bytes": 378,
+      "sha256": "6a2be227b54fbe145f1be4485750d4d5196b86d7ef22e8c8126cbc3659d04044"
+    },
+    {
+      "path": "src/public/service.ts",
+      "bytes": 17490,
+      "sha256": "59a98aed8ef48cb61ed5d8471e51e43751ec635cf574acb5c7ab83a0987f7cd0"
+    },
+    {
+      "path": "src/public/types.ts",
+      "bytes": 2104,
+      "sha256": "fdb8f1f6cb1d61f50f330c5d92961a225e232c9a746a22673f4f6b10426e7817"
     },
     {
       "path": "src/ui/components.tsx",
@@ -343,8 +439,8 @@
     },
     {
       "path": "tests/browser.mjs",
-      "bytes": 12197,
-      "sha256": "a57f2d85604734c22b2d7fc270d3bb615a1e26bc21f59df6f3b191cca3656404"
+      "bytes": 16777,
+      "sha256": "8312e55570f357eb7d50e191e0b3be87c9a41306de4be77563acf49acd44616a"
     },
     {
       "path": "tests/domain.test.ts",
@@ -362,6 +458,11 @@
       "sha256": "03b5492d7867d7a52bd1fb38620b04f0d8e3949393924c96ab36fc85826602cc"
     },
     {
+      "path": "tests/relay.test.ts",
+      "bytes": 20420,
+      "sha256": "1e8c108541b8c2a45e60141b5972b5446c81f4fc04cc1f88d6b08d584fc5f7c3"
+    },
+    {
       "path": "tsconfig.domain.json",
       "bytes": 401,
       "sha256": "d436097a8e03a26cff08aa1ccfcdbd5ffc6ab9222ffdc46844605366bdbe389b"
@@ -373,8 +474,8 @@
     },
     {
       "path": "UPDATING.md",
-      "bytes": 3114,
-      "sha256": "deb099334d8e4becaeba31f959019c80abec3a996c2c05b30dc44da5d45d711f"
+      "bytes": 3447,
+      "sha256": "f3516d3b68dd3d1844b41bc89025a0c8312c9ee15f99a63de714bae69a8af483"
     },
     {
       "path": "vendor/noble-secp256k1/compiled/index.d.ts",
@@ -408,8 +509,8 @@
     },
     {
       "path": "vercel.json",
-      "bytes": 741,
-      "sha256": "2710a31eae8ff2357ac1f8c104392d23d70a626474ce0a49c4c7e935974e6760"
+      "bytes": 934,
+      "sha256": "661974f6259e2d4b5f02e07387b1e701f91227bab5ef3f8c5ff93dec5c30babd"
     },
     {
       "path": "vite.config.ts",
