@@ -1,0 +1,13 @@
+{
+  "upstream": "https://github.com/paulmillr/noble-secp256k1",
+  "source": "https://raw.githubusercontent.com/paulmillr/noble-secp256k1/main/index.ts",
+  "retrieved": "2026-10-09",
+  "snapshot": "retrieved upstream main; no release or Git commit claim",
+  "license": "MIT",
+  "compiler": "TypeScript 6.0.3",
+  "sha256": {
+    "index.ts": "5cfd67bc0718b338c3ad81f9d5d835ec945fed8fc1a32b74fae6798009b2b841",
+    "compiled/index.js": "f2165c0f0ca59398018292fc640cecd34f2782e23d858a042b24de7d8406d923",
+    "compiled/index.d.ts": "34340f7029aff5f712d12c039ab44135980997b1dbd8305e8d2816cfe0d095c1"
+  }
+}

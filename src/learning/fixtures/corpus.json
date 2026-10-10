@@ -1,0 +1,992 @@
+{
+  "format": "goalstr-signed-fixtures-v1",
+  "referenceNow": 1791564600,
+  "author": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+  "ids": {
+    "plan": "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+    "checkin": "311705c97bd589d9b73a0c0362adc279a9edac3a8b6b5dbf299c6ffcb93d7598",
+    "revision": "f411619ee33afef55e87b9217b93b09c015e893e6697911e03b6ba923c44ded0",
+    "close": "e2649e42b61073b6250c8d6ab1df55487126c5282e7f33468fe999c186546b47",
+    "correction": "aebbda694e446f2efd240c6f55c9b8fc287a9637a5c3ee9297bf618350b247f7",
+    "branchA": "fa87d34dc490d85a507040d4c917fa5afa2c08a1d34292f2fb64d783539deeff",
+    "branchB": "4c4db35b16afaf1752e8031947cdbba531c320754f77a005f4d1802ff11af972",
+    "resolution": "48802926405fabdb04f328c42c8743e6437b235b24c116ab23c4c9356565be8d",
+    "laterBranch": "0bc89afc42201446294ba3057b97a883f89ee60118a4cec98d3e24df221099d3",
+    "tieBranch": "24ce750ec4582d99e382c1ee99bdab34c19b79d13e4f4bbe6aef83f1e49434e1",
+    "missingParent": "93e183520064a3df360a115c203ca4b4af9e89ba6395142bad91544b560b953c",
+    "future": "39bdad38722b9e464a108a0200bf3c63bde2a4c42098664f5a0f32f012a41cb8",
+    "foreignState": "99cd9eebc92d0c769e6d128407cf8d61f75f6cbf694b681e2c15b59cd5eac6f8",
+    "badSequence": "ba2a322caf31593e01cdcc56d55a1ed94098fbb08c15f314a04c14052e63afa7",
+    "wrongFulfillment": "e74640a6fed821408d8eaeab98625485eeda582573d518a552224ff65b256496",
+    "removedOriginal": "9fce0a771af1a3ba8f69b0b3b77ffd47efd8b3cada11313fd537431b0dfa0b9e",
+    "reopened": "0fdb983325620ede409a11919578b063cc0410176348ad0f7e105a2b262b307f",
+    "removedBonus": "fbe19a6fe2e46871765bd9e05be1590a9ec868d8b10ce80f048f7e34837acb08",
+    "rest": "ff77600335ab785bef8e73594f147d486b7593ba674ec882c4f8016fd404f552",
+    "duplicateRoot": "c383910ffd5f8ae34459482b57f58090a847efefe1b3bb3be2210adeb5fb9880",
+    "conversation": "0a7b714b1a4f4d9fa360863ec9524311edf45ee98fe87dfb4d2ba9e96d87520f",
+    "unsupported": "4e04833f457178c938d577c46434ca4d02ab1122199db0947b58353c34aa504d",
+    "deleteClose": "c5d6fc696c11a9e3e6a50fd8caf7f45ff57adb19a586cc8b32d1bec7e8296137",
+    "foreignDeletion": "a4e7fce9f6ecb1d570c1866d828fbb9b2a25169561cb7cf31e10f90b84db8ca0",
+    "deleteRoot": "616ddbb861b02ac0fa658c5002aac7d735634d050c483c88b772fed8137aeb22",
+    "tamperedContent": "311705c97bd589d9b73a0c0362adc279a9edac3a8b6b5dbf299c6ffcb93d7598",
+    "badSignature": "311705c97bd589d9b73a0c0362adc279a9edac3a8b6b5dbf299c6ffcb93d7598",
+    "duplicateAppTag": "3177d370cea12f11c421407aca7c1dca82f2cc809d2feaee41798a2bc9ee2597",
+    "badJson": "db80bc49c3efeb5b53c0e7769524b6ed47ab14b4ebee8ddf3f774ec73b17f943",
+    "contradictoryText": "8bf1b4fde44a1fc2f9257c61401be8eb2e40c021b89abf16900b412392d0e403"
+  },
+  "events": {
+    "plan": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791513900,
+      "kind": 1,
+      "tags": [
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "plan",
+          "{\"local_date\":\"2026-10-09\",\"timezone\":\"Asia/Kolkata\",\"utc_offset_minutes\":330,\"mode\":\"plan\",\"commitments\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"title\":\"Publish the landing page\",\"category\":\"work\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"title\":\"Walk for 30 minutes\",\"category\":\"health\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"title\":\"Read chapter four\",\"category\":\"learning\"}],\"slots\":[{\"id\":\"slot-1\",\"due_at\":1791523800},{\"id\":\"slot-2\",\"due_at\":1791536400},{\"id\":\"slot-3\",\"due_at\":1791549000}],\"review_due_at\":1791561600,\"opening_note\":\"Keep the plan small enough to finish.\",\"carry_forward_from\":[]}"
+        ]
+      ],
+      "content": "Plan — 2026-10-09\nTimezone: Asia/Kolkata\n1. Publish the landing page\n2. Walk for 30 minutes\n3. Read chapter four\nCheck-ins (UTC): 2026-10-09T05:30:00.000Z, 2026-10-09T09:00:00.000Z, 2026-10-09T12:30:00.000Z\nReview (UTC): 2026-10-09T16:00:00.000Z\nKeep the plan small enough to finish.",
+      "id": "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+      "sig": "49d0c042df1464d6ba66081a170180fdb696d7fe737fd7bd4a58191edaa98fd0441e242051ecaa6b45750d847a331237171dabbcf4d37c82a55c836e1618eea9"
+    },
+    "checkin": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791524400,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"in_progress\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"slot-1\",\"note\":\"The walk is done. The page needs another pass.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nIn progress: Publish the landing page\nDone: Walk for 30 minutes (original fulfilled)\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nCheck-in slot: slot-1\nThe walk is done. The page needs another pass.",
+      "id": "311705c97bd589d9b73a0c0362adc279a9edac3a8b6b5dbf299c6ffcb93d7598",
+      "sig": "6c67a66b3d31c7b33a26b6c5fb0098b705679fc2aa0b301e9970c8e3b725ea2fe8a343c95940ec5e76a904f5365c7eb6f152235a3ad3ebebe34b3cee654a467f"
+    },
+    "revision": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791537000,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "revision",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"311705c97bd589d9b73a0c0362adc279a9edac3a8b6b5dbf299c6ffcb93d7598\",\"sequence\":2,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Finish the landing-page draft\",\"status\":\"done\",\"original_fulfilled\":false,\"revision_reason\":\"Publishing needs someone else’s review.\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"}],\"bonus\":[{\"id\":\"44444444-4444-4444-8444-444444444444\",\"title\":\"Helped review a CV\",\"status\":\"done\"}],\"slot_id\":\"\",\"note\":\"The draft is ready. It has not been published.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Plan revised\nDone: Finish the landing-page draft\nDone: Walk for 30 minutes (original fulfilled)\nDone: Read chapter four (original fulfilled)\nOriginal commitments fulfilled: 2 of 3\nBonus — Done: Helped review a CV\nDay remains open.\nThe draft is ready. It has not been published.",
+      "id": "f411619ee33afef55e87b9217b93b09c015e893e6697911e03b6ba923c44ded0",
+      "sig": "89f7405d29b758d8522047f64a4ffc333168057ae3d7e3526ced0e969fc8a95426a2a8c066014b249440655d3c272ffc631375b489ed3d962bf3c89506791328"
+    },
+    "close": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791562500,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "close",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"f411619ee33afef55e87b9217b93b09c015e893e6697911e03b6ba923c44ded0\",\"sequence\":3,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Finish the landing-page draft\",\"status\":\"done\",\"original_fulfilled\":false,\"revision_reason\":\"Publishing needs someone else’s review.\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"}],\"bonus\":[{\"id\":\"44444444-4444-4444-8444-444444444444\",\"title\":\"Helped review a CV\",\"status\":\"done\"}],\"slot_id\":\"\",\"note\":\"\",\"closed\":true,\"reflection\":{\"went_well\":\"Made time for a walk and finished the chapter.\",\"got_in_way\":\"The page needs a review.\",\"carry_forward\":\"Publish the page after review.\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Day reviewed\nDone: Finish the landing-page draft\nDone: Walk for 30 minutes (original fulfilled)\nDone: Read chapter four (original fulfilled)\nOriginal commitments fulfilled: 2 of 3\nBonus — Done: Helped review a CV\nDay is closed.\nWent well: Made time for a walk and finished the chapter.\nGot in the way: The page needs a review.\nCarry forward: Publish the page after review.",
+      "id": "e2649e42b61073b6250c8d6ab1df55487126c5282e7f33468fe999c186546b47",
+      "sig": "7bd1b35019f1434c4683b893b0b1d48d70b6f6d8855d300a4ab555b0a12f6268fac25fda4b6ad7173927d77e10460703a989eef4474fcae556dd1b04a9a716d0"
+    },
+    "correction": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791563400,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "correction",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"e2649e42b61073b6250c8d6ab1df55487126c5282e7f33468fe999c186546b47\",\"sequence\":4,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Finish the landing-page draft\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"Publishing needs someone else’s review.\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"}],\"bonus\":[{\"id\":\"44444444-4444-4444-8444-444444444444\",\"title\":\"Helped review a CV\",\"status\":\"done\"}],\"slot_id\":\"\",\"note\":\"\",\"closed\":true,\"reflection\":{\"went_well\":\"Made time for a walk and finished the chapter.\",\"got_in_way\":\"The page needs a review.\",\"carry_forward\":\"Publish the page after review.\"},\"correction_reason\":\"The page was also published after review.\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Review corrected\nDone: Finish the landing-page draft (original fulfilled)\nDone: Walk for 30 minutes (original fulfilled)\nDone: Read chapter four (original fulfilled)\nOriginal commitments fulfilled: 3 of 3\nBonus — Done: Helped review a CV\nDay is closed.\nWent well: Made time for a walk and finished the chapter.\nGot in the way: The page needs a review.\nCarry forward: Publish the page after review.\nCorrection: The page was also published after review.",
+      "id": "aebbda694e446f2efd240c6f55c9b8fc287a9637a5c3ee9297bf618350b247f7",
+      "sig": "59dc2c487bb4300f4fa1c978936209325c542d355758469ab31b3dcd0ff8c24730d85485891ff49bbd0804c52c77617fa4591e1bb71d0130af7e3e3ac9cdbef4"
+    },
+    "branchA": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791525600,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"Laptop version: the page is published.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nDone: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nLaptop version: the page is published.",
+      "id": "fa87d34dc490d85a507040d4c917fa5afa2c08a1d34292f2fb64d783539deeff",
+      "sig": "1c3925725233cd802503346acbc015ed0203d5dce39a7647ad0416ff9f472fcee5f8a10ea0ea3b582c2c585c1f7c9ef7e148590d9ca599de7fd757a98d251a67"
+    },
+    "branchB": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791525660,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"Phone version: the walk and chapter are done.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nNot started: Publish the landing page\nDone: Walk for 30 minutes (original fulfilled)\nDone: Read chapter four (original fulfilled)\nOriginal commitments fulfilled: 2 of 3\nDay remains open.\nPhone version: the walk and chapter are done.",
+      "id": "4c4db35b16afaf1752e8031947cdbba531c320754f77a005f4d1802ff11af972",
+      "sig": "d344132e09b193fd7a25a3fb8bddbb1597f4e81e326d44a86e089d991377f7a8602fefd27f5b4e84c805b6393e3c2faaf7816f16687a1ff2b00a73fb72568ad3"
+    },
+    "resolution": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791525900,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "resolve",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"4c4db35b16afaf1752e8031947cdbba531c320754f77a005f4d1802ff11af972\",\"sequence\":2,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"I checked both versions and chose the laptop outcomes. This does not close the day.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[\"fa87d34dc490d85a507040d4c917fa5afa2c08a1d34292f2fb64d783539deeff\"]}"
+        ]
+      ],
+      "content": "Conflicting updates resolved\nDone: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nI checked both versions and chose the laptop outcomes. This does not close the day.",
+      "id": "48802926405fabdb04f328c42c8743e6437b235b24c116ab23c4c9356565be8d",
+      "sig": "7ed78aa09717a94cd19dc7cc3260814246f035c5bc4617f864d64fcab698e3ae37e14a3e6a083c0aa06c3d60613baec17304ac5d058b5e2414ce8e9acb31ab0f"
+    },
+    "laterBranch": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791526200,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"fa87d34dc490d85a507040d4c917fa5afa2c08a1d34292f2fb64d783539deeff\",\"sequence\":2,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"Another update arrives from the earlier branch.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nDone: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nAnother update arrives from the earlier branch.",
+      "id": "0bc89afc42201446294ba3057b97a883f89ee60118a4cec98d3e24df221099d3",
+      "sig": "b458ca26c240fb012e444850d13a177facd187628d9ced2c83f99b641f56ad1ef690bb445e52e7871604e54e0fbb1416aa6019ec1e5aed1e70df7e6cedb55365"
+    },
+    "tieBranch": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791525660,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"Same-second competing version.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nDone: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nSame-second competing version.",
+      "id": "24ce750ec4582d99e382c1ee99bdab34c19b79d13e4f4bbe6aef83f1e49434e1",
+      "sig": "cef484f985a679fd6301020933e856b798cdabe94612f63457ca6d69e8c948b6b8d92f9201a7f00caea7b52f75816d68c2e2f23f5ce1291d62d45ecea0797506"
+    },
+    "missingParent": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791527400,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sequence\":2,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nDone: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.",
+      "id": "93e183520064a3df360a115c203ca4b4af9e89ba6395142bad91544b560b953c",
+      "sig": "d09285ffcc20050dd9806c41077ced12268221a6cc237232613fe45ac955d21998bee1b6ee64b66ca4a5e7864f0c51fe76d8aff1ed1c3ba375b88b1b19d5bffb"
+    },
+    "future": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791565200,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"This event is more than five minutes ahead of the demo clock.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nDone: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nThis event is more than five minutes ahead of the demo clock.",
+      "id": "39bdad38722b9e464a108a0200bf3c63bde2a4c42098664f5a0f32f012a41cb8",
+      "sig": "113708afb35c9bdc4f635adc06ca777304e9658f5c808de89bda4c57b9ff92758ded0d3c2e214b55fcf4fbe5689443e9252381433e0a551a7ca3997fb0e0bc12"
+    },
+    "foreignState": {
+      "pubkey": "2f8bde4d1a07209355b4a7250a5c5128e88b84bddc619ab7cba8d569b240efe4",
+      "created_at": 1791527700,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "2f8bde4d1a07209355b4a7250a5c5128e88b84bddc619ab7cba8d569b240efe4"
+        ],
+        [
+          "p",
+          "2f8bde4d1a07209355b4a7250a5c5128e88b84bddc619ab7cba8d569b240efe4"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"Another author cannot mark your tasks complete.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nDone: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nAnother author cannot mark your tasks complete.",
+      "id": "99cd9eebc92d0c769e6d128407cf8d61f75f6cbf694b681e2c15b59cd5eac6f8",
+      "sig": "c0d09b08f6155dd2bab3aab1880ab1d0bbdc2775df626a8184d93e2679d99993247c7284b28a15ca90c43eb2721b8f51d164326b6f86ab3dbfdb5d7214efee09"
+    },
+    "badSequence": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791528000,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":7,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nNot started: Publish the landing page\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 0 of 3\nDay remains open.",
+      "id": "ba2a322caf31593e01cdcc56d55a1ed94098fbb08c15f314a04c14052e63afa7",
+      "sig": "225319cce47f65d35af3e6aa55dd61b138549bcfe2da3ccba44840e5530f501d2e09c5b86b3ee4b06216a3aa90ddb6442ca1994861e9efa0a6e1ae7d48c85e69"
+    },
+    "wrongFulfillment": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791528300,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"in_progress\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nIn progress: Publish the landing page (original fulfilled)\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.",
+      "id": "e74640a6fed821408d8eaeab98625485eeda582573d518a552224ff65b256496",
+      "sig": "3e2f3c73e79148fc8489e2037e253d84bdd464678904ca62f42bd47bcfa5f4a1a258cbae8ba253e1ddc7dbbf3e02d78ce9b1245ac616c216f5ac30c5e6a06d52"
+    },
+    "removedOriginal": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791528600,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nNot started: Publish the landing page\nNot started: Walk for 30 minutes\nOriginal commitments fulfilled: 0 of 2\nDay remains open.",
+      "id": "9fce0a771af1a3ba8f69b0b3b77ffd47efd8b3cada11313fd537431b0dfa0b9e",
+      "sig": "28073865f09762cae7c4d76cdb1b62c3869f49168b975ee0f20ad4b59c707c2ac004c5d021f8ff70c960b718e6eeaa533768abb7a1fc479e97205518442c62f2"
+    },
+    "reopened": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791563700,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"e2649e42b61073b6250c8d6ab1df55487126c5282e7f33468fe999c186546b47\",\"sequence\":4,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Finish the landing-page draft\",\"status\":\"done\",\"original_fulfilled\":false,\"revision_reason\":\"Publishing needs someone else’s review.\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"}],\"bonus\":[{\"id\":\"44444444-4444-4444-8444-444444444444\",\"title\":\"Helped review a CV\",\"status\":\"done\"}],\"slot_id\":\"\",\"note\":\"Attempt to reopen a reviewed day.\",\"closed\":false,\"reflection\":{\"went_well\":\"Made time for a walk and finished the chapter.\",\"got_in_way\":\"The page needs a review.\",\"carry_forward\":\"Publish the page after review.\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nDone: Finish the landing-page draft\nDone: Walk for 30 minutes (original fulfilled)\nDone: Read chapter four (original fulfilled)\nOriginal commitments fulfilled: 2 of 3\nBonus — Done: Helped review a CV\nDay remains open.\nAttempt to reopen a reviewed day.\nWent well: Made time for a walk and finished the chapter.\nGot in the way: The page needs a review.\nCarry forward: Publish the page after review.",
+      "id": "0fdb983325620ede409a11919578b063cc0410176348ad0f7e105a2b262b307f",
+      "sig": "c39b7fc0073697b7e21f7e3a7b897c468b0fc7f31d9965606a3794b7d467bc3fb2ca7022893cfb5a9e960b48dde9b66d5b5bbdad15d113d8719067e0892c8f9e"
+    },
+    "removedBonus": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791563760,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "correction",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"e2649e42b61073b6250c8d6ab1df55487126c5282e7f33468fe999c186546b47\",\"sequence\":4,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Finish the landing-page draft\",\"status\":\"done\",\"original_fulfilled\":false,\"revision_reason\":\"Publishing needs someone else’s review.\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":true,\"reflection\":{\"went_well\":\"Made time for a walk and finished the chapter.\",\"got_in_way\":\"The page needs a review.\",\"carry_forward\":\"Publish the page after review.\"},\"correction_reason\":\"Attempt to remove a bonus.\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Review corrected\nDone: Finish the landing-page draft\nDone: Walk for 30 minutes (original fulfilled)\nDone: Read chapter four (original fulfilled)\nOriginal commitments fulfilled: 2 of 3\nDay is closed.\nWent well: Made time for a walk and finished the chapter.\nGot in the way: The page needs a review.\nCarry forward: Publish the page after review.\nCorrection: Attempt to remove a bonus.",
+      "id": "fbe19a6fe2e46871765bd9e05be1590a9ec868d8b10ce80f048f7e34837acb08",
+      "sig": "08acca49fe07cbbd456afb35b65fad8cda652bb0f2af18d4cad616d59d7a58d650de3ef993a16fa846e98f93bda2b2c48daf3c4ab9c29e7685b79e7beee638d7"
+    },
+    "rest": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791513960,
+      "kind": 1,
+      "tags": [
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "rest",
+          "{\"local_date\":\"2026-10-10\",\"timezone\":\"Asia/Kolkata\",\"utc_offset_minutes\":330,\"mode\":\"rest\",\"commitments\":[],\"slots\":[],\"review_due_at\":null,\"opening_note\":\"A deliberate break.\",\"carry_forward_from\":[]}"
+        ]
+      ],
+      "content": "Rest day — 2026-10-10\nTimezone: Asia/Kolkata\nNo commitments. No completion score.\nA deliberate break.",
+      "id": "ff77600335ab785bef8e73594f147d486b7593ba674ec882c4f8016fd404f552",
+      "sig": "10e84abe262d11e4345aaf2bc4632d46020eaf23be5068d66bcd169d4b2d3d27dcb049c70bcc3aed6e4b0c26ad59c308d6eaa8223c71fec7786adad7586e5010"
+    },
+    "duplicateRoot": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791514200,
+      "kind": 1,
+      "tags": [
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "plan",
+          "{\"local_date\":\"2026-10-09\",\"timezone\":\"Asia/Kolkata\",\"utc_offset_minutes\":330,\"mode\":\"plan\",\"commitments\":[{\"id\":\"55555555-5555-4555-8555-555555555555\",\"title\":\"A different original commitment\",\"category\":\"work\"}],\"slots\":[{\"id\":\"slot-1\",\"due_at\":1791523800},{\"id\":\"slot-2\",\"due_at\":1791536400},{\"id\":\"slot-3\",\"due_at\":1791549000}],\"review_due_at\":1791561600,\"opening_note\":\"A second device created another plan.\",\"carry_forward_from\":[]}"
+        ]
+      ],
+      "content": "Plan — 2026-10-09\nTimezone: Asia/Kolkata\n1. A different original commitment\nCheck-ins (UTC): 2026-10-09T05:30:00.000Z, 2026-10-09T09:00:00.000Z, 2026-10-09T12:30:00.000Z\nReview (UTC): 2026-10-09T16:00:00.000Z\nA second device created another plan.",
+      "id": "c383910ffd5f8ae34459482b57f58090a847efefe1b3bb3be2210adeb5fb9880",
+      "sig": "147281a857efae9ee9a3efaa1f258ed7d76b9969af93b0af0deeb54d3efce0bec6637a893755bef32e1e7b678f5d3ae83b6049b05137be9763eb1b9d43dc9657"
+    },
+    "conversation": {
+      "pubkey": "2f8bde4d1a07209355b4a7250a5c5128e88b84bddc619ab7cba8d569b240efe4",
+      "created_at": 1791538200,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "e",
+          "f411619ee33afef55e87b9217b93b09c015e893e6697911e03b6ba923c44ded0",
+          "",
+          "reply",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ]
+      ],
+      "content": "Nice progress. <img src=x onerror=alert(1)> is plain text here.",
+      "id": "0a7b714b1a4f4d9fa360863ec9524311edf45ee98fe87dfb4d2ba9e96d87520f",
+      "sig": "eeb13b2904f88dc6b656a5bfd886e54ad9a6da751fe5162520b59d74c65d03b95ddf897bd73cfb203183bda553e959a2ab80608b60139393c97a82a50a481fd9"
+    },
+    "unsupported": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791538500,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "accountability",
+          "2",
+          "checkin",
+          "{}"
+        ]
+      ],
+      "content": "A future Goalstr format. Keep this note readable; do not apply its tasks.",
+      "id": "4e04833f457178c938d577c46434ca4d02ab1122199db0947b58353c34aa504d",
+      "sig": "9cf2fe35ee141254cbd7aa6d12048be73b6c4e76c36887e1a6e2ae7e1682e7799dc776785231123019f0d1dfb1c2bfb7def8165b8af9b05906551a261a0e35f2"
+    },
+    "deleteClose": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791564000,
+      "kind": 5,
+      "tags": [
+        [
+          "e",
+          "e2649e42b61073b6250c8d6ab1df55487126c5282e7f33468fe999c186546b47"
+        ],
+        [
+          "k",
+          "1"
+        ]
+      ],
+      "content": "Remove this review.",
+      "id": "c5d6fc696c11a9e3e6a50fd8caf7f45ff57adb19a586cc8b32d1bec7e8296137",
+      "sig": "b831b346fafc89e49b3f5cdfaa8e6305ef9835e15151282c77b485756598c54473dad77a1a7eb23890cb461f5b86239aa90e0c24dfc8abd77ba341f854e3c7f6"
+    },
+    "foreignDeletion": {
+      "pubkey": "2f8bde4d1a07209355b4a7250a5c5128e88b84bddc619ab7cba8d569b240efe4",
+      "created_at": 1791564060,
+      "kind": 5,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416"
+        ],
+        [
+          "k",
+          "1"
+        ]
+      ],
+      "content": "A different key cannot delete this plan.",
+      "id": "a4e7fce9f6ecb1d570c1866d828fbb9b2a25169561cb7cf31e10f90b84db8ca0",
+      "sig": "14736730fa00b568ae747f84ed19ee82dbb8dec1124e016af8706ad859547e04dc2fcc072a6b8efbc81775a049ed0df929839af3d243b8cebc574b1303c4d8a9"
+    },
+    "deleteRoot": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791564120,
+      "kind": 5,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416"
+        ],
+        [
+          "k",
+          "1"
+        ]
+      ],
+      "content": "Remove this plan.",
+      "id": "616ddbb861b02ac0fa658c5002aac7d735634d050c483c88b772fed8137aeb22",
+      "sig": "3534e0d4551ba2e269567750ecf0ed777d28cea49a0d1dcfb3d1459925bc506c90832f87b0a3a7e42bae2420f78fe133caccd61683ab3d10e5248e82f19751ce"
+    },
+    "tamperedContent": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791524400,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"in_progress\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"slot-1\",\"note\":\"The walk is done. The page needs another pass.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Altered after signing.",
+      "id": "311705c97bd589d9b73a0c0362adc279a9edac3a8b6b5dbf299c6ffcb93d7598",
+      "sig": "6c67a66b3d31c7b33a26b6c5fb0098b705679fc2aa0b301e9970c8e3b725ea2fe8a343c95940ec5e76a904f5365c7eb6f152235a3ad3ebebe34b3cee654a467f"
+    },
+    "badSignature": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791524400,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"in_progress\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"done\",\"original_fulfilled\":true,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"slot-1\",\"note\":\"The walk is done. The page needs another pass.\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nIn progress: Publish the landing page\nDone: Walk for 30 minutes (original fulfilled)\nNot started: Read chapter four\nOriginal commitments fulfilled: 1 of 3\nDay remains open.\nCheck-in slot: slot-1\nThe walk is done. The page needs another pass.",
+      "id": "311705c97bd589d9b73a0c0362adc279a9edac3a8b6b5dbf299c6ffcb93d7598",
+      "sig": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "duplicateAppTag": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791528900,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "Check-in\nNot started: Publish the landing page\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 0 of 3\nDay remains open.",
+      "id": "3177d370cea12f11c421407aca7c1dca82f2cc809d2feaee41798a2bc9ee2597",
+      "sig": "6a4c79a46cb7b7a4268df00e9cff42cdfb98b02b891f25bad91fdbbc56f93b10b68d68854a1b0d42fb286eca8ba2d9770245b7e732f434c3b06788de724adc07"
+    },
+    "badJson": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791528900,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{broken"
+        ]
+      ],
+      "content": "Check-in\nNot started: Publish the landing page\nNot started: Walk for 30 minutes\nNot started: Read chapter four\nOriginal commitments fulfilled: 0 of 3\nDay remains open.",
+      "id": "db80bc49c3efeb5b53c0e7769524b6ed47ab14b4ebee8ddf3f774ec73b17f943",
+      "sig": "fcf576a1dfd362d27e5888dafdbbc9d3ef7e3fee7dcefa3dd7a208e967af33a9797dc370d9979a7bf7a55e1297c76c51554919d691c3c098df5a903ff17e293a"
+    },
+    "contradictoryText": {
+      "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
+      "created_at": 1791528900,
+      "kind": 1,
+      "tags": [
+        [
+          "e",
+          "b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416",
+          "",
+          "root",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "p",
+          "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+        ],
+        [
+          "t",
+          "goalstr"
+        ],
+        [
+          "t",
+          "goalstr-v1"
+        ],
+        [
+          "accountability",
+          "1",
+          "checkin",
+          "{\"root_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"prev_id\":\"b2e5afd312f3824245c5c01d9d0945891952e49871213dd97a0260275c063416\",\"sequence\":1,\"tasks\":[{\"id\":\"11111111-1111-4111-8111-111111111111\",\"current_title\":\"Publish the landing page\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"22222222-2222-4222-8222-222222222222\",\"current_title\":\"Walk for 30 minutes\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"},{\"id\":\"33333333-3333-4333-8333-333333333333\",\"current_title\":\"Read chapter four\",\"status\":\"not_started\",\"original_fulfilled\":false,\"revision_reason\":\"\"}],\"bonus\":[],\"slot_id\":\"\",\"note\":\"\",\"closed\":false,\"reflection\":{\"went_well\":\"\",\"got_in_way\":\"\",\"carry_forward\":\"\"},\"correction_reason\":\"\",\"resolves\":[]}"
+        ]
+      ],
+      "content": "All three originals are done.",
+      "id": "8bf1b4fde44a1fc2f9257c61401be8eb2e40c021b89abf16900b412392d0e403",
+      "sig": "c5f9aae932711e88569870caeca75b34a9c5a1647a0804ec7a438f96212342427b367cae68fef526030667bfb5a857f28f26631e39b4ebc7baf4d693cf841a18"
+    }
+  }
+}

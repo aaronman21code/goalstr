@@ -1,6 +1,6 @@
 {
   "name": "goalstr",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -13,7 +13,9 @@
     "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.domain.json",
     "lint": "node scripts/check-boundaries.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "test:e2e": "node tests/browser.mjs"
+    "test:e2e": "node tests/browser.mjs",
+    "fixtures:generate": "node --experimental-strip-types scripts/generate-fixtures.ts",
+    "vendor:verify": "node scripts/verify-vendor.mjs"
   },
   "dependencies": {
     "lucide-react": "1.31.0",
