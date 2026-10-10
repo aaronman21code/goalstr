@@ -30,6 +30,21 @@ export interface RelayObservation {
     status: 'accepted' | 'rejected' | 'timed_out' | 'pending';
     reason?: string;
 }
+export interface PublicationFact {
+    relay: string;
+    status: 'accepted' | 'rejected' | 'timed_out' | 'disconnected' | 'auth_required' | 'cancelled';
+    sent: boolean;
+    at: number;
+    reason: string;
+}
+export interface PublisherPort {
+    publish(event: SignedEvent, relays: string[], signal: CancellationSignal, observed?: (fact: PublicationFact) => Promise<void>): Promise<PublicationFact[]>;
+}
+export interface CancellationSignal {
+    readonly aborted: boolean;
+    addEventListener(type: 'abort', listener: () => void, options?: { once?: boolean }): void;
+    removeEventListener(type: 'abort', listener: () => void): void;
+}
 export interface RelayPort {
     publish(event: SignedEvent, relays: string[]): Promise<RelayObservation[]>;
     subscribe(filters: Record<string, unknown>[], relays: string[], onEvent: (event: SignedEvent) => void): () => void;

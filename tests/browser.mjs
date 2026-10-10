@@ -23,10 +23,10 @@ try {
     const { page, context } = await newPage(); const external = []; page.on('request', req => { if (!req.url().startsWith(base)) external.push(req.url()); });
     await page.goto(base + '/today'); await visible(page.getByRole('button', { name: 'Try a practice day' })); await checkWidth(page); await page.screenshot({ path: path.join(output, 'welcome-mobile.png'), fullPage: true });
     await page.getByRole('button', { name: 'Try a practice day' }).click(); await page.getByLabel('Commitment 1', { exact: true }).fill('Publish the landing page'); await saved(page); await page.reload(); assert.equal(await page.getByLabel('Commitment 1', { exact: true }).inputValue(), 'Publish the landing page');
-    await page.getByRole('button', { name: 'Add a commitment' }).click(); await page.getByLabel('Commitment 2', { exact: true }).fill('Walk for 30 minutes'); await page.getByRole('button', { name: 'Add a commitment' }).click(); await page.getByLabel('Commitment 3', { exact: true }).fill('Read chapter four'); await checkWidth(page);
+    await page.locator('.goal-add-buttons').getByRole('button', { name: /Work/ }).click(); await page.getByLabel('Commitment 2', { exact: true }).fill('Walk for 30 minutes'); await page.locator('.goal-add-buttons').getByRole('button', { name: /Work/ }).click(); await page.getByLabel('Commitment 3', { exact: true }).fill('Read chapter four'); await checkWidth(page);
     await page.getByRole('button', { name: 'Review my plan' }).click(); await page.getByRole('button', { name: 'Start my practice day' }).click(); await visible(page.getByRole('img', { name: '0 of 3 original commitments completed, 0%' }));
-    await page.getByRole('button', { name: 'Check in', exact: true }).click(); await page.getByLabel('Status for commitment 2', { exact: true }).selectOption('done'); await page.getByLabel('Status for commitment 3', { exact: true }).selectOption('done'); await page.getByLabel('Status for commitment 1', { exact: true }).selectOption('in_progress'); await page.getByRole('button', { name: 'Add a bonus' }).click(); await page.getByLabel('Bonus accomplishment 1', { exact: true }).fill('Helped review a CV'); await page.getByLabel('Check-in slot', { exact: true }).selectOption('slot-1'); await page.getByRole('button', { name: 'Review update' }).click(); await page.getByRole('button', { name: 'Save check-in' }).click(); await visible(page.getByRole('img', { name: '2 of 3 original commitments completed, 67%' }));
-    await page.getByRole('button', { name: 'Revise plan', exact: true }).click(); await page.getByText('Revise commitment wording', { exact: true }).first().click(); await page.getByLabel('Current wording', { exact: true }).first().fill('Finish the landing-page draft'); await page.getByLabel('Status for commitment 1', { exact: true }).selectOption('done'); await visible(page.getByText('Did this also fulfill your original commitment?', { exact: true })); await page.getByRole('button', { name: 'Review update' }).click(); await page.getByRole('button', { name: 'Save revision' }).click(); await visible(page.getByRole('img', { name: '2 of 3 original commitments completed, 67%' }));
+    await page.getByRole('button', { name: 'Check in', exact: true }).click(); await page.getByRole('group', { name: 'Status for commitment 2', exact: true }).getByRole('button', { name: 'Done', exact: true }).click(); await page.getByRole('group', { name: 'Status for commitment 3', exact: true }).getByRole('button', { name: 'Done', exact: true }).click(); await page.getByRole('group', { name: 'Status for commitment 1', exact: true }).getByRole('button', { name: 'In progress', exact: true }).click(); await page.getByRole('button', { name: 'Add a bonus' }).click(); await page.getByLabel('Bonus accomplishment 1', { exact: true }).fill('Helped review a CV'); await page.getByRole('group', { name: 'Check-in slot', exact: true }).getByRole('button', { name: '11:00', exact: true }).click(); await page.getByRole('button', { name: 'Review update' }).click(); await page.getByRole('button', { name: 'Save check-in' }).click(); await visible(page.getByRole('img', { name: '2 of 3 original commitments completed, 67%' }));
+    await page.getByRole('button', { name: 'Revise plan', exact: true }).click(); await page.getByText('Revise commitment wording', { exact: true }).first().click(); await page.getByLabel('Current wording', { exact: true }).first().fill('Finish the landing-page draft'); await page.getByRole('group', { name: 'Status for commitment 1', exact: true }).getByRole('button', { name: 'Done', exact: true }).click(); await visible(page.getByText('Did this also fulfill your original commitment?', { exact: true })); await page.getByRole('button', { name: 'Review update' }).click(); await page.getByRole('button', { name: 'Save revision' }).click(); await visible(page.getByRole('img', { name: '2 of 3 original commitments completed, 67%' }));
     await page.getByRole('button', { name: 'Close today', exact: true }).click(); await page.getByLabel('What went well?', { exact: false }).fill('Finished the walk and chapter.'); await page.getByRole('button', { name: 'Review day' }).click(); await page.getByRole('button', { name: 'Close practice day' }).click(); await saved(page); await page.reload(); await visible(page.getByText('Day reviewed', { exact: true })); await checkWidth(page); await page.screenshot({ path: path.join(output, 'closed-day-mobile.png'), fullPage: true });
     await page.getByRole('button', { name: 'Prepare tomorrow' }).click(); await page.getByLabel('Finish the landing-page draft', { exact: true }).check(); await page.getByRole('button', { name: 'Create tomorrow’s draft' }).click(); await visible(page.getByText('Tomorrow’s draft', { exact: true })); assert.equal(await page.getByLabel('Commitment 1', { exact: true }).inputValue(), 'Finish the landing-page draft'); await saved(page); await page.reload(); assert.equal(await page.getByLabel('Commitment 1', { exact: true }).inputValue(), 'Finish the landing-page draft');
     await page.getByRole('link', { name: 'Back to today' }).click(); await page.getByRole('button', { name: 'Correct review' }).click(); await page.getByLabel('Yes, the original commitment was fulfilled', { exact: true }).check(); await page.getByLabel('Reason for correction', { exact: false }).fill('The page was also published.'); await page.getByRole('button', { name: 'Review day' }).click(); await page.getByRole('button', { name: 'Save correction' }).click(); await visible(page.getByRole('img', { name: '3 of 3 original commitments completed, 100%' })); await visible(page.getByText('Review corrected', { exact: true })); await visible(page.getByText('Day closed', { exact: true }));
@@ -130,6 +130,54 @@ try {
     await visible(page.getByRole('img', { name: '0 of 3 original commitments completed, 0%' }));
     await checkWidth(page);
     console.log('PASS public incomplete ancestry: no invented progress, metadata failure does not disable WSS');
+    await context.close();
+  }
+
+  {
+    const { page, context } = await newPage();
+    await page.clock.setFixedTime(new Date('2026-10-10T08:00:00Z'));
+    const publicEvents = [], wire = [];
+    const { schnorr } = await import('../vendor/noble-secp256k1/compiled/index.js');
+    const { eventHash, hexToBytes, bytesToHex } = await import('../src/protocol/nips/01/events.ts');
+    const secret = hexToBytes('0'.repeat(63) + '3'), account = bytesToHex(schnorr.getPublicKey(secret));
+    await page.exposeFunction('fixtureSign', async event => { const id = await eventHash({ ...event, pubkey: account }); return { ...event, pubkey: account, id, sig: bytesToHex(await schnorr.signAsync(hexToBytes(id), secret)) }; });
+    await page.addInitScript(account => { window.nostr = { getPublicKey: async () => account, signEvent: async event => { if (window.denyNext) { window.denyNext = false; throw new Error('Fixture signer denied approval'); } return window.fixtureSign(event); } }; }, account);
+    await page.routeWebSocket(/^wss:\/\//, ws => ws.onMessage(message => {
+      const frame = JSON.parse(String(message)); wire.push(frame);
+      if (frame[0] === 'REQ') { for (const event of publicEvents.filter(e => frame.slice(2).some(f => matchesFilter(e, f)))) ws.send(JSON.stringify(['EVENT', frame[1], event])); ws.send(JSON.stringify(['EOSE', frame[1]])); }
+      if (frame[0] === 'EVENT') { if (!publicEvents.some(e => e.id === frame[1].id)) publicEvents.push(frame[1]); ws.send(JSON.stringify(['OK', frame[1].id, true, ''])); }
+    }));
+    await page.goto(base + '/live');
+    await page.getByRole('button', { name: 'Connect browser signer', exact: true }).click();
+    await visible(page.getByLabel('Commitment 1', { exact: true }));
+    await page.getByLabel('Commitment 1', { exact: true }).fill('Ship one useful goal');
+    await page.getByRole('button', { name: 'Review my plan', exact: true }).click();
+    await visible(page.getByRole('dialog', { name: 'Review your public note', exact: true }));
+    await page.getByLabel('I understand that goals, notes, and reviews are public on Nostr.', { exact: true }).check();
+    await page.evaluate(() => { window.denyNext = true; });
+    await page.getByRole('button', { name: 'Approve with signer and publish', exact: false }).click();
+    await visible(page.getByRole('dialog').getByRole('alert'));
+    assert.equal(publicEvents.length, 0, 'Denied signer does not publish');
+    await page.getByRole('button', { name: 'Approve with signer and publish', exact: false }).click();
+    await visible(page.locator('.live-day').getByRole('img', { name: '0 of 1 original commitments completed, 0%' }));
+    await page.getByRole('button', { name: 'Check in', exact: false }).first().click();
+    await page.getByRole('group', { name: 'Status for commitment 1', exact: true }).getByRole('button', { name: 'Done', exact: true }).click();
+    await page.getByRole('dialog').getByRole('button', { name: 'Review update', exact: true }).click();
+    await visible(page.getByRole('dialog', { name: 'Review your public note', exact: true }));
+    await page.getByRole('button', { name: 'Approve with signer and publish', exact: false }).click();
+    await visible(page.locator('.live-day').getByRole('img', { name: '1 of 1 original commitments completed, 100%' }));
+    await page.locator('.live-day').getByRole('button', { name: 'Review day', exact: true }).click();
+    await page.getByRole('dialog').getByRole('button', { name: 'Review day', exact: true }).click();
+    await visible(page.getByRole('dialog', { name: 'Review your public note', exact: true }));
+    await page.getByRole('button', { name: 'Approve with signer and publish', exact: false }).click();
+    await visible(page.locator('.live-day').getByText('Reviewed', { exact: true }));
+    await checkWidth(page); await page.screenshot({ path: path.join(output, 'live-rings-mobile.png'), fullPage: true });
+    await page.reload(); await page.getByRole('button', { name: 'Connect browser signer', exact: true }).click();
+    await visible(page.locator('.live-day').getByRole('img', { name: '1 of 1 original commitments completed, 100%' }));
+    assert.equal(publicEvents.length, 3, 'Plan, check-in and close published once each');
+    assert.ok(wire.some(f => f[0] === 'EVENT')); assert.ok(!wire.some(f => f[0] === 'AUTH'));
+    await page.goto(base + '/today'); await visible(page.getByRole('button', { name: 'Try a practice day', exact: true }));
+    console.log('PASS NIP-07 UI: denied approval, exact signed publication, plan/check-in/review, reload and Practice isolation');
     await context.close();
   }
   assert.deepEqual(errors, [], 'No uncaught browser errors');

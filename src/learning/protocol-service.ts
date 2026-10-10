@@ -1,7 +1,8 @@
-import { decodeEvent } from '../protocol/accountability/v1/codec.ts';
+import { decodeEvent } from '../protocol/accountability/codec.ts';
 import { reconstruct, resolutionPayload, outgoingTime } from '../domain/events/reconstruct.ts';
 import type { DecodedEvent, DayProjection } from '../domain/events/types.ts';
-import { encodeRoot, encodeState } from '../protocol/accountability/v1/codec.ts';
+import { encodeRoot, encodeState } from '../protocol/accountability/v2/codec.ts';
+import { encodeStateVersion } from '../protocol/accountability/codec.ts';
 import { eventHash } from '../protocol/nips/01/events.ts';
 import type { DayRecord } from '../domain/accountability/types.ts';
 import type { RootPayload, StatePayload } from '../domain/events/types.ts';
@@ -27,7 +28,7 @@ export function safeDiagnosticText(value: string): string {
 }
 export function previewResolution(projection: DayProjection, chosenId: string, note: string, now: number): UnsignedEvent {
     const payload = resolutionPayload(projection, chosenId, note, now);
-    return encodeState('resolve', payload, projection.root!.event.pubkey, outgoingTime(now, projection.head!.record.event.created_at));
+    return encodeStateVersion(projection.root!.event.tags.find(t => t[0] === 'accountability')?.[1] === '2' ? '2' : '1', 'resolve', payload, projection.root!.event.pubkey, outgoingTime(now, projection.head!.record.event.created_at));
 }
 /** Explicit, unsigned local preview only. The supplied key is a fictional public key. */
 export async function previewPractice(day: DayRecord, examplePublicKey: string): Promise<UnsignedEvent[]> {

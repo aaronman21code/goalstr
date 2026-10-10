@@ -1,33 +1,36 @@
-# Updating Goalstr
+# Updating Goalstr in your browser
 
-Keep one `goalstr` GitHub repo and one Vercel project. Current release: Stage 3 / 0.3.0. See `docs/STAGE_03.md` and `CHANGES_STAGE_03.md`; no removals or storage migration are required from 0.2.0.
+Current release: **Stage 4 / 0.4.0**, based on the Stage 3 / 0.3.0 source delivered in this conversation. No GitHub Desktop is required.
 
-## First stage
+## Recommended upload
 
-Extract the ZIP and copy its contents to the repository root. `package.json` must be at the root; do not upload a ZIP or nest another project folder inside the repo. Commit all source/configuration files, including dotfiles. Then import that repo into Vercel once.
+1. Ensure the Stage 3 PR has been merged into **main**. Open your [Goalstr repository](https://github.com/aaronman21code/goalstr).
+2. Select **main** in the branch dropdown. Type **stage-04** and click **Create branch: stage-04 from main**. If that name already exists from another attempt, use a new name such as stage-04-review.
+3. Download and extract **Goalstr_Stage_04_Browser_Update.zip** outside the repository. It contains only the added and changed files from this release, preserving their paths.
+4. On the stage-04 branch choose **Add file → Upload files**. Drag the **contents inside** the extracted folder into the upload area: `src/`, `tests/`, `docs/`, and the root files. Upload all files in this update ZIP together. Do not upload the ZIP or its enclosing folder.
+5. Check that paths such as `src/live/service.ts`, `package.json`, and `README.md` appear correctly. Commit directly to stage-04 with `Goalstr Stage 4: browser signing and category rings`.
+6. Choose **Compare & pull request**, or **Pull requests → New pull request**. Set **base: main** and **compare: stage-04**. Title the PR with the same Stage 4 description, then create it.
+7. Open **Files changed**. Confirm the files match `CHANGES_STAGE_04.md`; no unexpected deletions or custom-code overwrites. Wait for GitHub Actions and open the Vercel preview from the PR deployment/checks area.
+8. Test the preview using `docs/STAGE_04.md`. Merge the PR after checks pass. Confirm the merge; Vercel deploys the production branch through the existing integration. The next stage should branch from the updated main again.
 
-## Every later stage
+The stage branch contains your new changes; main is the destination. Do not create the Stage 4 PR from the old Stage 2/3 branch after those stages were merged.
 
-1. In GitHub Desktop select main, fetch/pull updates, and create a new stage branch (stage-03 for this release). Start with no unrelated uncommitted changes. Download and extract the next ZIP outside the repo.
-2. Read its `CHANGELOG.md`, stage changed-file report, `release.json`, and `REMOVED_FILES.txt`.
-3. Copy all release files over the files in the same local GitHub repo. Preserve your repo's `.git/`, local `.env` files, and deployment credentials; those are never release files. Do not copy `node_modules/`, `dist/`, or test screenshots.
-4. Remove only the paths listed in `REMOVED_FILES.txt`. Copying files cannot remove an obsolete file, so this step matters when a module is renamed or retired.
-5. Review changes with GitHub Desktop or `git status`. If you have local code changes, compare and preserve them before overwriting their files.
-6. Run the verification commands in the README when possible. Commit the whole stage to the stage branch and Publish branch (or Push origin). Create a pull request with base main; GitHub retains actual file/line differences even though the ZIP is complete.
-7. Check CI and the Vercel preview. Try the new stage and the existing Practice flow. Merge the pull request into your configured production branch after checks pass; Vercel updates production. Create a version tag/release to mark the checkpoint.
+## Change tracking
 
-You can use GitHub's upload UI instead: upload the extracted folders/files, then separately remove any listed obsolete paths. Include configuration dotfiles. GitHub Desktop is simpler when there are many changes.
+GitHub compares actual content and lines. Unchanged files are not modified just because they were copied again. The browser update ZIP avoids uploading them entirely. `CHANGES_STAGE_04.md` lists exact added/modified/deleted paths against the shipped Stage 3 ZIP; `release.json` hashes the complete source snapshot. This is a local release comparison, not a claim that your remote repo was checked. Preserve any edits you made outside this conversation before overwriting their files.
 
-## Release contents
+Each stage gets its own branch and PR. Keep the merged PR as the review record; optionally create a GitHub release/tag `v0.4.0` after merge. Do not delete the repository or replace its history.
 
-`release.json` records the stage, version, schema version, prior-stage baseline, and included files with SHA-256 hashes. Every release is self-contained; you do not have to collect small patches from earlier downloads. `REMOVED_FILES.txt` lists code/configuration paths removed since the previous stage. The original Stage 1 had none. Version 0.1.1 renames the two reference documents; remove their old paths only if you already uploaded version 0.1.0.
+## Complete ZIP and browser limits
 
-## Local data and rollback
+`Goalstr_Stage_04_GitHub.zip` contains every source/configuration/documentation file and can recreate the project without earlier downloads. Its contents belong at the repository root. GitHub's browser upload accepts at most 100 files per batch: upload `src/` first, then the remaining folders/root files, committing each batch to the same stage-04 branch before making one PR. Include configuration files from the complete ZIP when creating a fresh repo. Existing unchanged configuration files remain when using the browser update ZIP.
 
-App data lives in the browser, not in the code ZIP or GitHub repo. Same-origin deployments keep the stable Practice database unless the user clears it or the browser removes it. Export a backup before trying a storage migration. A new hostname or Vercel preview URL starts with a different browser store.
+`REMOVED_FILES.txt` contains no removed paths for this stage. Future updates that list removals require deleting those exact paths on the stage branch before opening its PR. Neither archive contains dependencies, build output, git metadata, or local credentials.
 
-Each later stage must preserve or migrate existing data explicitly. Its release notes must say whether rolling back can read data written by the newer version. Stage 1 writes schema version 1. Rolling back code does not itself roll back browser data.
+## Browser data and rollback
 
-## Work between stages
+Export Practice data before reviewing a migration. Stage 4 reads schema 1 and migrates to schema 2 without deleting days or drafts, keeping the same database/key. Stage 3 cannot read the newer schema 2: rolling back code does not roll back data. Preserve your pre-upgrade export if a rollback is needed; do not overwrite your only backup.
 
-Keep this ZIP as the current source checkpoint. When continuing here after changing the source elsewhere, attach the latest source ZIP or a patch so the next stage starts from your actual code. Otherwise we continue from the last release generated in this conversation.
+Live drafts/outbox use a separate account database. Signing sessions reconnect after refresh; saved drafts, signed events, and relay facts remain. Vercel preview and production URLs have separate browser stores. Nothing in a source ZIP backs up your browser data.
+
+If you change code elsewhere, attach your current source ZIP or patch before continuing the build here.

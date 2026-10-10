@@ -1,2 +1,1 @@
-# Goalstr Stage 3 / 0.3.0
-# No files removed since Stage 2 / 0.2.0.
+# Stage 4 / 0.4.0: no files removed from Stage 3 / 0.3.0.

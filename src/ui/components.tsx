@@ -4,6 +4,7 @@ import { ArrowUpRight, Check, Coffee, HelpCircle, X } from 'lucide-react';
 import { navigate } from '../app/router.tsx';
 import type { DayRecord } from '../domain/accountability/types.ts';
 import { progress } from '../domain/accountability/rules.ts';
+import { categoryProgress } from '../domain/accountability/categories.ts';
 export function Link({ to, children, className, label }: {
     to: string;
     children: ReactNode;
@@ -32,18 +33,28 @@ export function Explain({ action = 'plan' }: {
     action?: 'plan' | 'update' | 'review' | 'rest' | 'carry';
 }) {
     const descriptions = {
-        plan: 'This practice plan stays in this browser. In the live stage, your signer will approve a public kind 1 note, and the app will wait for a relay to accept it.',
-        update: 'This update saves a complete task snapshot locally. Live check-ins will be signed kind 1 replies to your plan. Someone else’s reply cannot change your tasks.',
-        review: 'Closing is your explicit decision, separate from completion. Live reviews will be signed replies. A signature identifies the author; it does not prove the work happened.',
+        plan: 'This practice plan stays in this browser. In Live, your signer approves a public kind 1 note, and the app will wait for a relay to accept it.',
+        update: 'This update saves a complete task snapshot locally. Live check-ins are signed kind 1 replies to your plan. Someone else’s reply cannot change your tasks.',
+        review: 'Closing is your explicit decision, separate from completion. Live reviews are signed replies. A signature identifies the author; it does not prove the work happened.',
         rest: 'A rest day records an intentional break. It has no completion percentage and is counted separately from reviewed days.',
         carry: 'Selected commitments become new originals in a new draft. Today’s review stays as it was. Nothing is copied or published automatically.',
     };
     return <details className="explain"><summary><HelpCircle size={16}/> What happens on Nostr?</summary><p>{descriptions[action]}</p><Link to="/learn" className="text-link">See the build and protocol guide <ArrowUpRight size={14}/></Link></details>;
 }
-export function Ring({ day }: {
-    day: DayRecord;
-}) { const p = progress(day); if (p.percent === null)
-    return <div className="rest-emblem"><Coffee size={42} strokeWidth={1.4}/><span>Rest day</span></div>; const circumference = 2 * Math.PI * 54; return <div className="ring" role="img" aria-label={`${p.count} of ${p.total} original commitments completed, ${p.percent}%`}><svg viewBox="0 0 140 140" aria-hidden="true"><circle cx="70" cy="70" r="54" className="ring-track"/><circle cx="70" cy="70" r="54" className="ring-progress" strokeDasharray={circumference} strokeDashoffset={circumference * (1 - p.percent / 100)} transform="rotate(-90 70 70)"/></svg><div className="ring-label"><strong>{p.percent}<small>%</small></strong><span>{p.count} of {p.total}</span></div></div>; }
+export function Ring({ day, compact = false, showLabel = !compact }: { day: DayRecord; compact?: boolean; showLabel?: boolean }) {
+    const p = progress(day), groups = categoryProgress(day);
+    if (p.percent === null) return <div className="rest-emblem"><Coffee size={42} strokeWidth={1.4}/><span>Rest day</span></div>;
+    return <div className={`ring ${compact ? 'ring-mini' : ''}`} role="img" aria-label={`${compact ? 'Category rings.' : `${p.count} of ${p.total} original commitments completed, ${p.percent}%.`} ${groups.map(g => `${g.label}: ${g.count} of ${g.total}`).join('; ')}`}>
+        <svg viewBox="0 0 240 240" aria-hidden="true">{groups.map((g, i) => {
+            const radius = 102 - i * 26, length = 2 * Math.PI * radius;
+            return <g key={g.category} className={`category-color-${i}`}><circle cx="120" cy="120" r={radius} className="ring-track"/><circle cx="120" cy="120" r={radius} className="ring-progress" strokeDasharray={`${length * g.percent / 100} ${length}`} strokeDashoffset="0" transform="rotate(-90 120 120)" opacity={g.count ? 1 : 0}/></g>;
+        })}</svg>{showLabel && <div className="ring-label"><strong>{p.percent}<small>%</small></strong><span>{p.count}/{p.total}</span></div>}
+    </div>;
+}
+export function CategorySummary({ day }: { day: DayRecord }) { return <div className="category-summary">{categoryProgress(day).map((g, i) => <div className={`category-color-${i}`} key={g.category}><span className="category-dot" aria-hidden="true"/><div><strong>{g.label}</strong><span>{g.count} of {g.total} goals fulfilled</span></div><b>{g.percent}<small>%</small></b></div>)}</div>; }
+export function TapSelector<T extends string | number>({ label, value, choices, onChange }: { label: string; value: T; choices: { value: T; label: string; disabled?: boolean }[]; onChange: (value: T) => void }) {
+    return <fieldset className="tap-selector"><legend className="sr-only">{label}</legend><div>{choices.map(choice => <button type="button" key={choice.value} aria-pressed={value === choice.value} disabled={choice.disabled} onClick={() => onChange(choice.value)}>{choice.label}</button>)}</div></fieldset>;
+}
 export function SavedLabel({ saving, temporary }: {
     saving: boolean;
     temporary: boolean;

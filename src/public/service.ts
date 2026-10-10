@@ -1,6 +1,6 @@
 import type { DecodedEvent, RootEvent } from '../domain/events/types.ts';
 import { reconstruct } from '../domain/events/reconstruct.ts';
-import { decodeEvent } from '../protocol/accountability/v1/codec.ts';
+import { decodeEvent } from '../protocol/accountability/codec.ts';
 import { encodePublic } from '../protocol/nips/19/identifiers.ts';
 import { parsePublicInput, parsePublicRoute, publicPath } from '../protocol/nips/21/links.ts';
 import { authorWriteRelays } from '../protocol/nips/65/relay-list.ts';
@@ -162,7 +162,7 @@ export class PublicService {
             } else {
                 if (!more && this.target.type === 'profile') await this.query([{ kinds: [0,10002], authors: [this.target.pubkey], limit: 8 }], this.snapshot.relays, signal, token);
                 const now = this.now(), until = more && previousCursor !== null ? previousCursor : now + 300;
-                const filter: RelayFilter = { kinds: [1], '#t': ['goalstr','goalstr-v1'], since: now - this.snapshot.windowDays * 86400, until, limit: 20 };
+                const filter: RelayFilter = { kinds: [1], '#t': ['goalstr','goalstr-v1','goalstr-v2'], since: now - this.snapshot.windowDays * 86400, until, limit: 20 };
                 if (this.target.type === 'profile') filter.authors = [this.target.pubkey];
                 primary = await this.query([filter], this.routed(this.target.type === 'profile' ? [this.target.pubkey] : []), signal, token);
                 const times = primary.events.filter(r => r.event.created_at <= now + 300).map(r => r.event.created_at), cursor = times.length ? Math.min(...times) : previousCursor;

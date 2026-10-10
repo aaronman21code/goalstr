@@ -1,3 +1,5 @@
+> Stage 4 implementation amendment (10 October 2026): M4 also includes the approved three-category/five-goal UI refresh and explicit Practice/app-format versioning. The native NIP-07 adapter, account IndexedDB port and shared WSS publisher retain documented tooling substitutions; no new crypto is introduced. Deterministic write-path checks pass; actual extension, hosted browser/CSP and live-pilot exit checks remain pending. Stage 5 still owns NIP-46 and NIP-42.
+
 # Goalstr Prototype — Build Plan
 
 Version 1.1 · 9 October 2026 · Based on PRD v1.1 and the NostrBlocks reference prompt

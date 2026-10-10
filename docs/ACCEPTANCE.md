@@ -41,3 +41,20 @@ Resolve those checks before calling M1's UI exit gate complete. Later milestones
 75 tests pass: 23 domain/storage, 26 protocol, 26 identifier/relay/read-service scenarios. Type checks, import boundaries, vendor checksums and production build pass. Deterministic signed fixtures cover shared sockets, duplicate/reordered arrivals, requested-filter rejection, EOSE verification drain, one bounded retry, timeout, cancellation/teardown, eight-relay/event/frame caps, metadata failure, profile fallback, author-write routing, missing roots/parents, deletion and branch warnings, unsupported readable fallback, same-second overlap/stall, deep links and no secret-key flow. Tests assert session-only reads and preserve the unchanged Practice store/schema/service baseline.
 
 CI browser scenarios now test signed mocked public feed and links, reload, partial ancestry, metadata failure, public/Practice separation and safe identifier errors. Source syntax is checked here; execution/visual/accessibility results remain pending because the browser executable is absent. Five-second direct pilot probes failed with 403/timeouts. Real public pilot ingestion, hosted CSP/WSS, Safari/Firefox/mobile and human accessibility review remain release-review gates. M3 implementation is delivered; its full live/browser exit evidence is not claimed complete. Signing/outbox/auth/social gates remain later milestones.
+
+
+## Stage 4 verified write and category evidence
+
+**107 tests pass locally**, comprising the prior 75 plus 32 Stage 4 scenarios. App and pure-domain type checks, boundary lint, vendored integrity, browser-source syntax and production build pass.
+
+| Scenario | Deterministic evidence | Remaining gate |
+| --- | --- | --- |
+| Three categories / five originals each | Limits, weighted/category credit, bonus exclusion, v1/v2 round-trip and cross-version rejection | Hosted ring/control legibility, text zoom and screen reader |
+| A09 signer denial/mutation/account change | Absent signer, denied access/approval, timeout, exact return validation, identity mismatch and late-session rejection | Real NIP-07 extension/CSP compatibility |
+| A10/A11 publication and recovery | Durable intent/signature/facts failure boundaries, 1/3 acceptance, matching/wrong/missing OK, auth-needed/cancel, exact retry and later verified ID read-back | Actual pilot relay acceptance and second-client observation |
+| A14 duplicate/stale work | Atomic competing-tab staging, double-click block, uncertain-root/update protection, old-head preview rejection and preserved draft | Real browser IndexedDB interruption and multi-tab checks |
+| A15 resolution | Signed v2 competing full snapshots and causal resolution, history preserved | Hosted comparison UI review |
+| A18 Practice isolation | Separate storage/service, account switch, public ritual and no automatic Practice copy | Browser mock scenario supplied; real session smoke check |
+| A24 migration/recovery | Lossless schema 1 → 2, expanded schema 2, quota/fact-save failure behavior | Real exported production backup and preview migration |
+
+Browser automation was attempted once for this release and could not launch because Chromium is absent. Syntax and mocked test sources are provided; CI or the deployed preview must execute them. No passing visual, full accessibility, actual extension/relay, hosted CSP, mobile remote signing or cross-browser result is claimed. M4's real-extension whole-day exit remains open; full P0 completion still requires later milestones.

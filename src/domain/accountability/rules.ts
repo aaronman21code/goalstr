@@ -1,5 +1,6 @@
 import type { Bonus, DayRecord, DomainContext, PlanDraft, Preferences, Snapshot, TaskState, UpdateInput } from './types.ts';
 import { emptyReflection } from './types.ts';
+import { validateCategories } from './categories.ts';
 import { addDays, localParts, offsetAt, resolveLocal, validDate, validTimezone } from './time.ts';
 export const codePoints = (s: string) => Array.from(s).length;
 export function bounded(s: string, max: number, label: string, required = false): string { const value = s.trim(); if (required && !value)
@@ -17,8 +18,9 @@ export function makeDay(draft: PlanDraft, preferences: Preferences, ctx: DomainC
     if (!validDate(draft.date) || !validTimezone(draft.timezone))
         throw new Error('This plan needs a valid date and timezone.');
     validatePreferences(preferences);
-    if (!rest && (draft.commitments.length < 1 || draft.commitments.length > 3))
-        throw new Error('Choose one to three commitments.');
+    if (!rest && (draft.commitments.length < 1 || draft.commitments.length > 15))
+        throw new Error('Choose one to fifteen goals across up to three categories.');
+    if (!rest) validateCategories(draft.commitments);
     if (!rest && new Set(draft.commitments.map(t => t.id)).size !== draft.commitments.length)
         throw new Error('Commitment IDs must be unique.');
     const commitments = rest ? [] : draft.commitments.map((t, i) => ({ ...t, title: bounded(t.title, 160, `Commitment ${i + 1}`, true) }));

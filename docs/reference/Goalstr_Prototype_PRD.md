@@ -1,3 +1,5 @@
+> Stage 4 approved amendment (10 October 2026): original plans allow up to three active categories and five goals per category, superseding earlier one-to-three-total-goal wording. Use category rings plus weighted overall original completion; bonus/slots/closure remain separate. Preserve existing days with explicit Practice schema 1 → 2 migration and public v1/v2 contracts. Fitness-inspired dark surfaces, mini week rings and everyday tap selectors are the current UI direction.
+
 # Goalstr Prototype Product Requirements
 
 Version 1.1 | 9 October 2026 | Product and implementation specification

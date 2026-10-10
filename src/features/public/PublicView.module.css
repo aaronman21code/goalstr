@@ -75,3 +75,6 @@
  .dayTitle :global(.ring-label strong) { font-size: 23px; }
  .dayTitle :global(.ring-label small) { font-size: 11px; }
 }
+
+.progress { color:var(--pink); font-size:25px; font-weight:650; letter-spacing:-.7px; margin:10px 0 0; }
+.progress span { font-size:14px; color:var(--muted); letter-spacing:0; }

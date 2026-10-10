@@ -181,7 +181,7 @@ test('an author-deleted root is suppressed on a direct public day link',async()=
     const service=new PublicService(new FakeReader([events.plan,events.deleteRoot]),info,()=>now);await service.start(publicPath({type:'event',id:events.plan.id,hints:[]}),[relay]);const card=service.getSnapshot().cards[0];assert.equal(card.projection!.day,null);assert.ok(card.projection!.warnings.some(w=>/deletion of this root/.test(w)));service.dispose();
 });
 test('same-second page limits stop without silently skipping history',async()=>{
-    const data=await Promise.all(Array.from({length:20},(_,i)=>metadata(1,`Future format ${i}`,[['t','goalstr'],['accountability','2','plan','{}']])));
+    const data=await Promise.all(Array.from({length:20},(_,i)=>metadata(1,`Future format ${i}`,[['t','goalstr'],['accountability','3','plan','{}']])));
     const service=new PublicService(new FakeReader(data),info,()=>now);await service.start('/people',[relay]);assert.equal(service.getSnapshot().cards.length,20);assert.equal(service.getSnapshot().canLoadMore,true);await service.loadMore();assert.equal(service.getSnapshot().cards.length,20);assert.equal(service.getSnapshot().canLoadMore,false);assert.ok(service.getSnapshot().warnings.some(w=>/crowded timestamp/.test(w)));service.dispose();
 });
 test('dispose aborts in-flight work and suppresses stale view updates',async()=>{

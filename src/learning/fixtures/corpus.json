@@ -24,7 +24,7 @@
     "rest": "ff77600335ab785bef8e73594f147d486b7593ba674ec882c4f8016fd404f552",
     "duplicateRoot": "c383910ffd5f8ae34459482b57f58090a847efefe1b3bb3be2210adeb5fb9880",
     "conversation": "0a7b714b1a4f4d9fa360863ec9524311edf45ee98fe87dfb4d2ba9e96d87520f",
-    "unsupported": "4e04833f457178c938d577c46434ca4d02ab1122199db0947b58353c34aa504d",
+    "unsupported": "8f6457b85da05e8789df416b33af965e53d024d6391983533a6f0d5f4a56c0e4",
     "deleteClose": "c5d6fc696c11a9e3e6a50fd8caf7f45ff57adb19a586cc8b32d1bec7e8296137",
     "foreignDeletion": "a4e7fce9f6ecb1d570c1866d828fbb9b2a25169561cb7cf31e10f90b84db8ca0",
     "deleteRoot": "616ddbb861b02ac0fa658c5002aac7d735634d050c483c88b772fed8137aeb22",
@@ -744,14 +744,14 @@
         ],
         [
           "accountability",
-          "2",
+          "3",
           "checkin",
           "{}"
         ]
       ],
       "content": "A future Goalstr format. Keep this note readable; do not apply its tasks.",
-      "id": "4e04833f457178c938d577c46434ca4d02ab1122199db0947b58353c34aa504d",
-      "sig": "9cf2fe35ee141254cbd7aa6d12048be73b6c4e76c36887e1a6e2ae7e1682e7799dc776785231123019f0d1dfb1c2bfb7def8165b8af9b05906551a261a0e35f2"
+      "id": "8f6457b85da05e8789df416b33af965e53d024d6391983533a6f0d5f4a56c0e4",
+      "sig": "3473cf07ae18a0f4c111fe9fb17f28e2a22ed3c59152f6fa63bdcac62f5c89bbfc6030b0d61099366d8f3bcacd2a644107e01e3ac2bc0d072cc399c4704ccd95"
     },
     "deleteClose": {
       "pubkey": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9",
