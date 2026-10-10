@@ -1,5 +1,13 @@
 # Goalstr releases
 
+## 0.4.0 — Stage 4 — 10 October 2026
+
+Adds NIP-07 browser signing, public previews/acknowledgment, account-scoped transactional drafts/outbox, NIP-01 EVENT/OK facts, exact-event retry/read-back recovery, and public plan/rest/update/revision/review/correction/conflict-resolution flows. Concurrent editor changes, duplicate approvals, missing/capped history, account changes and failed persistence preserve drafts and block unsafe new publication.
+
+Refreshes the UI with Fitness-inspired dark surfaces, up to three category rings, five original goals per category, mini week rings, tap selectors and clear mode/delivery labels. Adds a frozen expanded v2 contract while retaining v1 behavior; explicitly migrates Practice document schema 1 to 2, preserving the database namespace and data. Older builds cannot read new schema 2 data/backups. No production dependency change or removed file.
+
+107 unit tests, type checks, boundary lint, vendor integrity, browser source syntax and production build pass. Browser execution is unavailable (missing Chromium); real extension/relay and hosted visual/CSP checks remain preview gates. Includes complete source and changed-files-only browser update ZIPs with an exact Stage 3 baseline comparison.
+
 ## 0.3.0 — Stage 3 — 10 October 2026
 
 Replaces the People placeholder with a lazy public read-only feed, verified finite WSS relay queries, profile hydration, public day/profile/nostr: links, NIP-11 information, NIP-65 author-write routing, missing-root/parent/deletion retrieval, overlap pagination and partial/disconnected/unsupported states. Adds scoped NIP-19/21 modules, resource deadlines/caps/cancellation, read diagnostics and lessons.

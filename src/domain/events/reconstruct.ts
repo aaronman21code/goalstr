@@ -18,7 +18,7 @@ export function resolutionPayload(projection: DayProjection, chosenId: string, n
         tasks: snapshot.tasks.map(t => ({ id: t.id, current_title: t.currentTitle, status: t.status, original_fulfilled: t.originalFulfilled, revision_reason: t.revisionReason })),
         bonus: snapshot.bonus, slot_id: '', note: note.trim(), closed: current(parent.day).closed,
         reflection: { went_well: snapshot.reflection.wentWell, got_in_way: snapshot.reflection.gotInWay, carry_forward: snapshot.reflection.carryForward }, correction_reason: '', resolves: projection.branches.map(n => n.record.event.id).sort() };
-    applyState(parent, { category: 'state', type: 'resolve', payload, event: { id: '0'.repeat(64), sig: '0'.repeat(128), pubkey: root.event.pubkey, created_at: outgoingTime(now, parent.record.event.created_at), kind: 1, tags: [], content: '' } });
+    applyState(parent, { category: 'state', type: 'resolve', payload, event: { id: '0'.repeat(64), sig: '0'.repeat(128), pubkey: root.event.pubkey, created_at: outgoingTime(now, parent.record.event.created_at), kind: 1, tags: [['accountability', root.event.tags.find(t => t[0] === 'accountability')?.[1] ?? '1']], content: '' } });
     return payload;
 }
 
@@ -33,6 +33,7 @@ function applyState(parent: StateNode, record: StateEvent): DayRecord {
     const p = record.payload, before = current(parent.day);
     if (p.sequence !== parent.sequence + 1) throw new Error('Sequence must follow the actual parent.');
     if (record.event.created_at <= parent.record.event.created_at) throw new Error('Update time must increase after its parent.');
+    if (record.event.tags.find(t => t[0] === 'accountability')?.[1] !== parent.record.event.tags.find(t => t[0] === 'accountability')?.[1]) throw new Error('State format must match its root and parent.');
     if (p.root_id !== parent.day.id) throw new Error('Parent belongs to a different root.');
     if (p.closed !== (before.closed || record.type === 'close')) throw new Error('Closure flag does not match this transition.');
     if (record.type === 'close' && p.tasks.some(t => before.tasks.find(old => old.id === t.id)?.currentTitle !== t.current_title)) throw new Error('Close retains the current task wording.');

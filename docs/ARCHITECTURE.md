@@ -41,3 +41,14 @@ The protocol lab imports public signed fixtures, not their generating identities
 The lazy Public view gets a fresh service from the app composition root. `public/types.ts` defines finite read ports; `public/service.ts` batches discovery, metadata, author relay routing, visible-card threads and targeted dependencies. The infrastructure pool owns shared sockets, deadlines, cancellation, fresh verification and exact filter matching. NIP-11 information, NIP-19 identifiers, NIP-21 links and NIP-65 lists remain scoped adapters. Domain reconstruction is unchanged. See READ_PATH.md for module ownership and STAGE_03.md for explicit bounds.
 
 The public cache is memory-only and separate from Practice. Leaving the route aborts and disposes network work; StrictMode creates a fresh service on each effect setup. Public cards never invoke Practice commands, signers or publication. Snapshots refresh through finite reads; they are not an unbounded live subscription.
+
+
+## Stage 4 write boundary and category UI
+
+`LiveService` is composed with a scoped `BrowserSigner`, the shared read/write relay pool, and `IndexedLiveStore`. React forms only create/save drafts and request previews. NIP-07 owns extension calls and exact-event checks; the service owns transactional intent/outbox orchestration. `PublisherPort` carries publication facts and a plain cancellation interface so the pure-domain compilation remains free of DOM types. Disconnect cancels work and resets session sockets; persisted account documents remain.
+
+Practice schema 1 migrates losslessly to 2 under the stable database/key. Live has its own account-keyed database and causal-head-tagged drafts. Reopened stale drafts are preserved for comparison until an explicit user choice starts from current state. Atomic stored intent staging prevents another tab from signing a duplicate date/parent operation. New remote conflicts are still possible and remain explicit full-version choices.
+
+Shared app schemas/codec dispatch live in `protocol/accountability/schema.ts` and `codec.ts`, with separate v1/v2 modules. Existing v1 limits remain frozen; v2 allows three categories/five goals each. State versions must match the root. `domain/accountability/categories.ts` provides pure grouping/limits; SVG rings, textual category totals, tap controls, and Fitness tokens remain view-only. Public browsing never calls the write service.
+
+See WRITE_PATH.md and STAGE_04.md for transaction boundaries, finite retrieval limits, compatibility and pending hosted/extension gates.

@@ -71,3 +71,12 @@ NIP-01 standardizes the request/envelope; our app tag defines day semantics. NIP
 Exercise: compare relay EOSE and failure observations, then try a different window. Tradeoff: finite deadlines/event budgets keep the app responsive but can omit history. Missing ancestry cannot produce confirmed progress; same-second paging stalls remain visible. Public results may be empty while Goalstr is early.
 
 Checkpoint: Does EOSE prove every public event was found? No. It ends one relay's stored response. Does a relay information failure prove WSS is disconnected? No; the HTTPS information path can fail independently.
+
+
+## Stage 4 — Rings, signatures, and publication
+
+Try three categories, with one category containing two originals and another one original. Fulfill one in the first and the only goal in the second: the category rings show 50% and 100%, while the overall score is 2/3 = 67%, not 75%. Add a bonus; none of those numbers changes. General counts as a category. Five goals per category is a ceiling, not a requirement.
+
+Open Live with a NIP-07 browser extension. Read the exact public preview, author and destinations. Deny a signature once and inspect the saved draft/intent. Approve a small non-sensitive plan. The external signer supplies the signature; Goalstr verifies it and saves the event before sending EVENT. Matching OK is a relay's acceptance. If only one of three accepts, the result is Published · 1/3 relays accepted. Timeout leaves delivery unconfirmed.
+
+Refresh and reconnect. The signer session starts again, while account-scoped drafts and outbox remain. Looking up the signed event ID can establish Observed on relay; that is a later sighting, not an invented acceptance reply. Retrying uses the exact signed fields/ID/signature without another signer approval. Practice remains its own local ritual. Read WRITE_PATH.md to trace the service/NIP/storage boundaries and STAGE_04.md for pending browser/pilot verification.

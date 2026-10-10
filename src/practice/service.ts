@@ -54,7 +54,7 @@ export class PracticeService {
     }
     async settled(): Promise<void> { await this.queue; }
     start(): void { this.commit({ ...this.snapshot.document, started: true }); }
-    blankDraft(date: string): PlanDraft { return { date, timezone: this.snapshot.document.preferences.timezone, commitments: [{ id: this.clock.id(), title: '', category: '' }], note: '' }; }
+    blankDraft(date: string): PlanDraft { return { date, timezone: this.snapshot.document.preferences.timezone, commitments: [{ id: this.clock.id(), title: '', category: 'work' }], note: '' }; }
     saveDraft(draft: PlanDraft): void { this.commit({ ...this.snapshot.document, drafts: { ...this.snapshot.document.drafts, [draft.date]: draft } }); }
     saveUpdateDraft(dayId: string, draft: UpdateInput): void { this.commit({ ...this.snapshot.document, updateDrafts: { ...this.snapshot.document.updateDrafts, [dayId]: draft } }); }
     startDay(draft: PlanDraft, rest = false): string {

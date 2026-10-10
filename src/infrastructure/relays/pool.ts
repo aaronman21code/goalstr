@@ -1,7 +1,7 @@
 import { verifySignedEvent, serializedBytes } from '../../protocol/nips/01/events.ts';
 import { safeDiagnosticText } from '../../learning/protocol-service.ts';
 import { boundedRelays, MAX_RELAYS } from './urls.ts';
-import type { SignedEvent } from '../../domain/ports/index.ts';
+import type { SignedEvent, PublicationFact, PublisherPort, CancellationSignal } from '../../domain/ports/index.ts';
 import type { RelayFilter, RelayReaderPort, ReadResult, ReadStatus } from '../../public/types.ts';
 
 export interface SocketPort {
@@ -34,7 +34,7 @@ export function validateFilters(filters: RelayFilter[]): void {
     }
 }
 /** Read-only NIP-01 transport. One socket/relay, verified finite queries, no publishing or AUTH. */
-export class RelayPool implements RelayReaderPort {
+export class RelayPool implements RelayReaderPort, PublisherPort {
     private peers = new Map<string, Peer>();
     private sequence = 0;
     private disposed = false;
@@ -135,5 +135,39 @@ export class RelayPool implements RelayReaderPort {
         }
         return { events: [...events.values()].sort((a,b) => b.event.created_at - a.event.created_at || a.event.id.localeCompare(b.event.id)), observations: results.flatMap(r => r.observations) };
     }
-    dispose(): void { this.disposed = true; for (const peer of this.peers.values()) { for (const task of [...peer.tasks.values()]) task.cancel(); peer.cleanup(); peer.socket.close(); } this.peers.clear(); }
+    async publish(raw: SignedEvent, values: string[], signal: CancellationSignal, observed?: (fact: PublicationFact) => Promise<void>): Promise<PublicationFact[]> {
+        const verified = await this.options.verify(raw);
+        if (!verified.event) throw new Error('Only freshly verified signed events can be sent.');
+        const event = verified.event, relays = boundedRelays(values, 4);
+        if (!relays.length) throw new Error('Choose at least one write relay.');
+        return Promise.all(relays.map(async relay => {
+            const fact = await new Promise<PublicationFact>(resolve => {
+                let peer: Peer | null = null, done = false, sent = false;
+                const finish = (status: PublicationFact['status'], reason = '') => {
+                    if (done) return; done = true; clearTimeout(timer); signal.removeEventListener('abort', abort);
+                    peer?.tasks.delete(event.id);
+                    resolve({ relay, status, sent, at: Math.floor(Date.now() / 1000), reason: safeDiagnosticText(reason).slice(0, 160) });
+                };
+                const abort = () => finish('cancelled', 'Publication stopped; delivery may have occurred if sent.');
+                const timer = setTimeout(() => finish('timed_out', 'No matching relay acknowledgment. Delivery is not confirmed.'), this.options.timeoutMs);
+                if (signal.aborted || this.disposed) { abort(); return; }
+                signal.addEventListener('abort', abort, { once: true });
+                try { peer = this.peer(relay); } catch { finish('disconnected', 'Could not open this relay.'); return; }
+                if (peer.tasks.has(event.id)) { peer = null; finish('disconnected', 'This exact event already has an active publication.'); return; }
+                const task: Task = {
+                    open: () => { if (done || sent) return; try { sent = true; peer!.socket.send(JSON.stringify(['EVENT', event])); } catch { finish('disconnected', 'Relay send failed.'); } },
+                    fail: () => finish('disconnected', 'Connection ended without acceptance. Delivery is not confirmed.'), cancel: abort,
+                    message: value => {
+                        if (done || !Array.isArray(value)) return;
+                        if (value[0] === 'AUTH') { finish('auth_required', 'Relay authentication is supported in Stage 5. Try another configured write relay.'); return; }
+                        if (value.length === 4 && value[0] === 'OK' && value[1] === event.id && typeof value[2] === 'boolean' && typeof value[3] === 'string') finish(value[2] ? 'accepted' : 'rejected', value[3]);
+                    }
+                };
+                peer.tasks.set(event.id, task); if (peer.socket.readyState === 1) task.open();
+            });
+            await observed?.(fact); return fact;
+        }));
+    }
+    reset(): void { for (const peer of this.peers.values()) { for (const task of [...peer.tasks.values()]) task.cancel(); peer.cleanup(); peer.socket.close(); } this.peers.clear(); }
+    dispose(): void { this.disposed = true; this.reset(); }
 }

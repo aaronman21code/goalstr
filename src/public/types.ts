@@ -12,6 +12,7 @@ export interface ReadResult { events: ObservedEvent[]; observations: ReadObserva
 export interface RelayReaderPort {
     query(filters: RelayFilter[], relays: string[], signal: AbortSignal): Promise<ReadResult>;
     dispose(): void;
+    reset?(): void;
 }
 export interface RelayInfo {
     relay: string; available: boolean; name: string; description: string; supportedNips: number[];

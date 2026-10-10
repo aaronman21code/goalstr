@@ -59,3 +59,20 @@ Public IDs use tested NIP-19 Bech32/TLV encoding/error checks and NIP-21 routes,
 ## D014 — Reviewable updates and bounded work
 
 User confirmed Stage 2 deployed; Stage 3 starts from the shipped 0.2.0 source, with remote comparison unavailable. A hash-based changed-file report and LF normalization make ZIP updates reviewable. Use one stage branch/PR and release tag per checkpoint. AGENTS.md persists the active-work progress and bounded-probe rules after the earlier stalled remote-browser check. Browser and real pilot checks remain explicit pending gates, not passing claims.
+
+
+## D015 — Stage 4 category limits and explicit migration
+
+The owner's Stage 4 request supersedes the original three-total-goal limit: up to three active categories per day and five immutable originals in each, including General as a category. Up to fifteen originals. Category rings count original fulfillment only; the overall number weights goals. The new app format is v2, preserving strict v1 reads and v1 updates. Shared codec/schema code has version-scoped exports; cross-version state is rejected.
+
+Practice document schema becomes 2 through a lossless reader migration from 1; its DB/store/key are unchanged. Older code cannot read new schema 2. Export a pre-upgrade backup before production review; rollback code is not a data rollback.
+
+## D016 — Native browser signer and account outbox
+
+NIP-07's runtime extension surface needs no identity-key implementation. Its small native adapter is behind SignerPort and uses the existing maintained verifier. The account store uses native IndexedDB transactions behind LiveStorePort; the bounded native pool shares WSS sockets for reads and publication. No new dependency or cryptographic primitive is introduced. Native adapter substitutions remain visible rather than claiming an installed Nostr SDK. Primary NIP-07/NIP-01 URLs and review date are recorded in WRITE_PATH.md; immutable specification commit pins and real-extension compatibility remain pilot evidence gaps.
+
+Operation order is durable intent → external approval → exact verification → durable signed event → send → durable per-destination facts. Signing and sending alone are not Published. Verified later sightings are labeled separately. Account-scoped drafts, signed logs and exact retries survive session teardown; no Practice goals are copied. Competing-tab intent checks are atomic. Causal heads are saved with editor drafts to prevent silent overwrites of observed remote progress.
+
+## D017 — Review release and browser delivery
+
+Stage 4 starts from the last shipped Stage 3 / 0.3.0 source; no remote diff is claimed. It includes a complete ZIP and a changed-files-only ZIP for browser upload, one stage-04 branch and a PR into updated main. All 107 deterministic tests pass. Browser launch is blocked by the absent executable, so visual/extension/CSP/device acceptance remains a deployed-preview gate. UI tokens and SVG rings derive from the supplied Fitness references while retaining Goalstr branding. No Apple image assets are shipped.

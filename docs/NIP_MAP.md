@@ -1,6 +1,6 @@
 # Goalstr protocol coverage
 
-Stages 2–3 implement verified event/codec/reconstruction subsets, finite NIP-01 public queries and profiles, NIP-11 information, public NIP-19/NIP-21 links, and NIP-65 read routing. Signers, publication, authentication and social mutations remain later-stage work. The table shows milestone ownership; the working subsets are listed below.
+Stages 2–3 implement verified event/codec/reconstruction subsets, finite NIP-01 public queries and profiles, NIP-11 information, public NIP-19/NIP-21 links, and NIP-65 read routing. Stage 4 adds browser signing and publication; authentication and social mutations remain later-stage work. The table shows milestone ownership; the working subsets are listed below.
 
 | NIP | Module / use | Stage |
 | --- | --- | --- |
@@ -44,3 +44,16 @@ No NIP integration is called fully complete merely because its Stage 2 parsing/v
 | 10 / 09 | Real thread/dependency reads and author-authorized explicit deletion reconstruction | Reply/own-deletion publication later |
 
 Primary specifications were reviewed on 10 October 2026; see READ_PATH.md. Live pilot/hosted/browser checks are pending, despite passing deterministic transport/service tests. No full-NIP or full-prototype completion is implied.
+
+
+## Stage 4 working write subsets
+
+| NIP / app module | Working subset | Remaining evidence/scope |
+| --- | --- | --- |
+| 07 | Runtime extension/key discovery, exact event signing verification, timeout/disconnect/account-change guards | Actual extension + hosted CSP pilot; NIP-46 remote signing remains Stage 5 |
+| 01 | Shared read/write transport, matching OK facts, per-destination replication, durable retry and ID read-back | Live relay pilot; acceptance is not permanent retention |
+| 10 | Public author state notes are direct-root replies; causal prev_id is an app field | Social conversation publication remains Stage 6 |
+| 65 / 42 | Verified author write-relay history routing; explicit configured publication destinations | Automated publishing/recipient routing and selected-relay AUTH remain Stage 5 |
+| accountability/v1,v2 | Strict v1 preserved, expanded v2, signed roots/state/resolutions, cross-version rejection | Future schema changes need a new version |
+
+NIP-07/NIP-01 official primary specs reviewed 10 October 2026. See WRITE_PATH.md. No full-NIP/full-prototype/real-pilot completion claim follows from mocked tests.
