@@ -3,6 +3,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
+import { matchesFilter } from '../src/infrastructure/relays/pool.ts';
+import { encodePublic } from '../src/protocol/nips/19/identifiers.ts';
 const require = createRequire(import.meta.url);
 let playwright;
 try { playwright = require('playwright'); } catch { if (process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES) playwright = require(path.join(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, 'playwright')); else throw new Error('Install browser tooling first: npm install --no-save --package-lock=false playwright@1.62.1'); }
@@ -70,6 +72,64 @@ try {
     assert.equal(await page.getByRole('img').count(), 0);
     await checkWidth(page);
     console.log('PASS protocol lab: signed reconstruction, conflicts, unsigned resolution, missing parent, future-clock policy, rest');
+    await context.close();
+  }
+  {
+    const { page, context } = await newPage();
+    await page.clock.setFixedTime(new Date('2026-10-10T05:00:00Z'));
+    const corpus = JSON.parse(await fs.readFile('src/learning/fixtures/corpus.json', 'utf8'));
+    const data = ['plan','checkin','revision','close','correction','conversation'].map(name => corpus.events[name]);
+    const frames = [];
+    await page.route(/^https:\/\/(relay\.damus\.io|nos\.lol)\/?$/, route => route.fulfill({ status: 200, contentType: 'application/nostr+json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ name: 'Browser test relay', supported_nips: [1,11,65] }) }));
+    await page.routeWebSocket(/^wss:\/\//, ws => ws.onMessage(message => {
+      const frame = JSON.parse(String(message)); frames.push(frame);
+      if (frame[0] !== 'REQ') return;
+      const events = data.filter(event => frame.slice(2).some(filter => matchesFilter(event, filter))).sort((a,b) => b.created_at - a.created_at || a.id.localeCompare(b.id));
+      for (const event of events) { ws.send(JSON.stringify(['EVENT', frame[1], event])); ws.send(JSON.stringify(['EVENT', frame[1], event])); }
+      ws.send(JSON.stringify(['EOSE', frame[1]]));
+    }));
+    await page.goto(base + '/people');
+    await visible(page.getByRole('heading', { name: 'Small plans, shared openly.', exact: true }));
+    await visible(page.getByRole('img', { name: '3 of 3 original commitments completed, 100%' }));
+    assert.equal(await page.getByRole('img').count(), 1, 'Duplicate relay arrivals yield one day card');
+    await checkWidth(page);
+    await page.screenshot({ path: path.join(output, 'public-feed-mobile.png'), fullPage: true });
+    await page.getByRole('link', { name: 'Open public day', exact: true }).click();
+    await visible(page.getByRole('img', { name: '3 of 3 original commitments completed, 100%' }));
+    assert.ok(new URL(page.url()).pathname.startsWith('/public/day/note1'));
+    await page.reload();
+    await visible(page.getByRole('img', { name: '3 of 3 original commitments completed, 100%' }));
+    const npub = encodePublic('npub', corpus.events.plan.pubkey);
+    await page.getByLabel('Public identifier', { exact: true }).fill(npub);
+    await page.getByRole('button', { name: 'Open', exact: true }).click();
+    await visible(page.getByText(npub, { exact: true }));
+    await visible(page.getByRole('img', { name: '3 of 3 original commitments completed, 100%' }));
+    await page.getByLabel('Public identifier', { exact: true }).fill('nsec1never-enter-private-keys');
+    await page.getByRole('button', { name: 'Open', exact: true }).click();
+    await visible(page.getByRole('alert'));
+    await page.getByRole('link', { name: 'Today', exact: true }).first().click();
+    await visible(page.getByRole('button', { name: 'Try a practice day', exact: true }));
+    assert.ok(frames.some(frame => frame[0] === 'CLOSE'), 'Stored-response subscriptions are closed');
+    assert.ok(!frames.some(frame => frame[0] === 'EVENT' || frame[0] === 'AUTH'), 'Public browsing never signs/publishes/authenticates');
+    console.log('PASS public read UI: mocked signed relays, deduplication, day/profile deep links, no-login isolation, secret rejection');
+    await context.close();
+  }
+  {
+    const { page, context } = await newPage();
+    await page.clock.setFixedTime(new Date('2026-10-10T05:00:00Z'));
+    const corpus = JSON.parse(await fs.readFile('src/learning/fixtures/corpus.json', 'utf8'));
+    const data = [corpus.events.plan, corpus.events.missingParent];
+    await page.route(/^https:\/\/(relay\.damus\.io|nos\.lol)\/?$/, route => route.fulfill({ status: 503, body: 'Unavailable' }));
+    await page.routeWebSocket(/^wss:\/\//, ws => ws.onMessage(message => {
+      const frame = JSON.parse(String(message)); if (frame[0] !== 'REQ') return;
+      for (const event of data.filter(event => frame.slice(2).some(filter => matchesFilter(event, filter)))) ws.send(JSON.stringify(['EVENT', frame[1], event]));
+      ws.send(JSON.stringify(['EOSE', frame[1]]));
+    }));
+    await page.goto(base + '/people');
+    await visible(page.getByText('Partial results · some queries or history are incomplete.', { exact: true }));
+    await visible(page.getByRole('img', { name: '0 of 3 original commitments completed, 0%' }));
+    await checkWidth(page);
+    console.log('PASS public incomplete ancestry: no invented progress, metadata failure does not disable WSS');
     await context.close();
   }
   assert.deepEqual(errors, [], 'No uncaught browser errors');

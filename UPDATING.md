@@ -1,6 +1,6 @@
 # Updating Goalstr
 
-Keep one `goalstr` GitHub repo and one Vercel project. Current release: Stage 2 / 0.2.0. See `docs/STAGE_02.md` for this update; no removals or storage migration are required from Goalstr 0.1.1.
+Keep one `goalstr` GitHub repo and one Vercel project. Current release: Stage 3 / 0.3.0. See `docs/STAGE_03.md` and `CHANGES_STAGE_03.md`; no removals or storage migration are required from 0.2.0.
 
 ## First stage
 
@@ -8,13 +8,13 @@ Extract the ZIP and copy its contents to the repository root. `package.json` mus
 
 ## Every later stage
 
-1. Download and extract the next complete-stage ZIP to a separate folder.
-2. Read its `CHANGELOG.md`, `release.json`, and `REMOVED_FILES.txt`.
+1. In GitHub Desktop select main, fetch/pull updates, and create a new stage branch (stage-03 for this release). Start with no unrelated uncommitted changes. Download and extract the next ZIP outside the repo.
+2. Read its `CHANGELOG.md`, stage changed-file report, `release.json`, and `REMOVED_FILES.txt`.
 3. Copy all release files over the files in the same local GitHub repo. Preserve your repo's `.git/`, local `.env` files, and deployment credentials; those are never release files. Do not copy `node_modules/`, `dist/`, or test screenshots.
 4. Remove only the paths listed in `REMOVED_FILES.txt`. Copying files cannot remove an obsolete file, so this step matters when a module is renamed or retired.
 5. Review changes with GitHub Desktop or `git status`. If you have local code changes, compare and preserve them before overwriting their files.
-6. Run the verification commands in the README when possible. Commit the whole stage and push to the same repo. Vercel's Git integration builds the update.
-7. Check the CI result and deployed app. Try one plan, an update, review, and refresh. If you use a preview branch, merge it into your configured production branch after checking.
+6. Run the verification commands in the README when possible. Commit the whole stage to the stage branch and Publish branch (or Push origin). Create a pull request with base main; GitHub retains actual file/line differences even though the ZIP is complete.
+7. Check CI and the Vercel preview. Try the new stage and the existing Practice flow. Merge the pull request into your configured production branch after checks pass; Vercel updates production. Create a version tag/release to mark the checkpoint.
 
 You can use GitHub's upload UI instead: upload the extracted folders/files, then separately remove any listed obsolete paths. Include configuration dotfiles. GitHub Desktop is simpler when there are many changes.
 

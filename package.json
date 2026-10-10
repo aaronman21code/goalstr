@@ -1,6 +1,6 @@
 {
   "name": "goalstr",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -13,7 +13,7 @@
     "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.domain.json",
     "lint": "node scripts/check-boundaries.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "test:e2e": "node tests/browser.mjs",
+    "test:e2e": "node --experimental-strip-types tests/browser.mjs",
     "fixtures:generate": "node --experimental-strip-types scripts/generate-fixtures.ts",
     "vendor:verify": "node scripts/verify-vendor.mjs"
   },

@@ -57,3 +57,17 @@ Try Missing parent: a valid signature does not provide the absent causal event. 
 Checkpoint: If two relays deliver the same events in opposite orders, should the ring differ? No. IDs deduplicate arrivals; parent graphs and deterministic fork selection decide the same result. A reply by another author cannot change your task state.
 
 Read `docs/contracts/GOALSTR_V1.md` for the exact contract and `docs/STAGE_02.md` for update instructions. The source includes 26 protocol tests in addition to the 23 Practice tests.
+
+## Stage 3 — relays are partial views
+
+Open People to read real public Nostr. Change the discovery window or bootstrap relay list, refresh, then open Relay observations. Look up a known npub or compatible Goalstr day note ID; open and reload the public link. No signer is required and Practice remains local.
+
+```js
+['REQ', 'public-days', {kinds: [1], '#t': ['goalstr-v1'], since: windowStart, limit: 20}]
+```
+
+NIP-01 standardizes the request/envelope; our app tag defines day semantics. NIP-11 describes relay advertisements, NIP-65 suggests author write relays, and NIP-19/21 make validated public links. A signature identifies approval by a key, not proven task completion.
+
+Exercise: compare relay EOSE and failure observations, then try a different window. Tradeoff: finite deadlines/event budgets keep the app responsive but can omit history. Missing ancestry cannot produce confirmed progress; same-second paging stalls remain visible. Public results may be empty while Goalstr is early.
+
+Checkpoint: Does EOSE prove every public event was found? No. It ends one relay's stored response. Does a relay information failure prove WSS is disconnected? No; the HTTPS information path can fail independently.
