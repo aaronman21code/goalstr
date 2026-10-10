@@ -1,5 +1,13 @@
 # Goalstr releases
 
+## 0.2.0 — Stage 2 — 9 October 2026
+
+Adds an opt-in, lazy-loaded protocol lab; exact v1 schema/codec and plaintext generation; real event hash/Schnorr verification; deterministic reconstruction, duplicate-root/branch selection, resolution previews, pending dependencies, future-time quarantine, conversation isolation, and authorized deletion handling. Includes 30 public fixtures, checksum-pinned licensed upstream cryptography, official BIP-340 vectors, 26 protocol tests, expanded browser scenarios, and exact update/contract documentation.
+
+All 49 Node tests, domain/application type checks, boundary lint, vendor integrity, and the production build pass. Browser execution remains pending in this environment. No live relay traffic, signer, or publication capability is added.
+
+No files removed from Goalstr 0.1.1. Storage schema and backup format remain version 1; no migration or automatic publication occurs.
+
 ## 0.1.1 — Stage 1 naming update — 9 October 2026
 
 Adopts Goalstr throughout the header, welcome screen, profile, learning guide, printable guide, browser/social metadata, backup filename, package/lockfile, CI, README, and reference documents. Adds a G progress-ring mark and matching favicon. README now includes new-repository setup for `goalstr` and Vercel import settings. Future discovery examples use `goalstr` / `goalstr-v1`.

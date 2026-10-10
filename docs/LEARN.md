@@ -47,3 +47,13 @@ Create three commitments. Complete two, add a bonus, then close the day. Expect 
 - `tests/domain.test.ts`: 23 verified rule/storage scenarios.
 
 Open `/learn` to print a light guide using the browser's Print / Save as PDF. The guide distinguishes working local behavior from planned NIPs. The browser-rendered layout still needs verification on the deployed candidate.
+
+## Stage 2 lesson: the event set, not arrival order
+
+Open `/protocol`. Start with a Complete day, then compare Two competing updates. Inspect `id`, `pubkey`, `created_at`, `kind`, `e`/`p` tags, readable `content`, and the app-defined `accountability` payload. Nostr standardizes the envelope; Goalstr supplies the task schema.
+
+Try Missing parent: a valid signature does not provide the absent causal event. Try Deleted ancestor: an authorized deletion makes the reconstruction incomplete. Try Future timestamp: the signed bytes remain valid while app clock policy delays admission. Advance the example clock to re-evaluate. Try a resolution preview; it has no signature and does not update the saved day.
+
+Checkpoint: If two relays deliver the same events in opposite orders, should the ring differ? No. IDs deduplicate arrivals; parent graphs and deterministic fork selection decide the same result. A reply by another author cannot change your task state.
+
+Read `docs/contracts/GOALSTR_V1.md` for the exact contract and `docs/STAGE_02.md` for update instructions. The source includes 26 protocol tests in addition to the 23 Practice tests.

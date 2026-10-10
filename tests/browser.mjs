@@ -42,6 +42,36 @@ try {
   {
     const { page, context } = await newPage({ viewport: { width: 1280, height: 900 } }); await page.goto(base); await page.keyboard.press('Tab'); assert.equal(await page.evaluate(() => document.activeElement?.textContent), 'Skip to content'); await page.keyboard.press('Tab'); await page.goto(base + '/example'); await visible(page.getByRole('img', { name: '2 of 3 original commitments completed, 67%' })); await page.screenshot({ path: path.join(output, 'example-desktop.png'), fullPage: true }); await page.goto(base + '/learn'); await visible(page.getByText('NIP cheat sheet', { exact: true })); await page.emulateMedia({ media: 'print' }); await page.pdf({ path: path.join(output, 'learning-guide-print.pdf'), format: 'A4', printBackground: false }); await checkWidth(page); console.log('PASS desktop example, keyboard entry, direct routes, printable guide'); await context.close();
   }
+  {
+    const { page, context } = await newPage();
+    await page.goto(base + '/protocol');
+    await visible(page.getByRole('heading', { name: 'A day, built from events.', exact: true }));
+    await visible(page.getByRole('img', { name: '3 of 3 original commitments completed, 100%' }));
+    await checkWidth(page);
+    await page.getByLabel('Example scenario', { exact: true }).selectOption('conflict');
+    await visible(page.getByRole('img', { name: '2 of 3 original commitments completed, 67%' }));
+    await visible(page.getByRole('heading', { name: 'Competing versions', exact: true }));
+    await page.getByLabel('Choose a full version', { exact: true }).selectOption({ index: 2 });
+    await page.getByRole('button', { name: 'Preview unsigned resolution', exact: false }).click();
+    await visible(page.getByText('Unsigned example · not published', { exact: true }));
+    await page.screenshot({ path: path.join(output, 'protocol-conflict-mobile.png'), fullPage: true });
+    await page.getByLabel('Example scenario', { exact: true }).selectOption('resolved');
+    await visible(page.getByRole('img', { name: '1 of 3 original commitments completed, 33%' }));
+    assert.equal(await page.getByRole('heading', { name: 'Competing versions', exact: true }).count(), 0);
+    await page.getByLabel('Example scenario', { exact: true }).selectOption('missing');
+    await visible(page.getByText('Missing dependencies · retrieval intent', { exact: true }));
+    await visible(page.getByRole('img', { name: '0 of 3 original commitments completed, 0%' }));
+    await page.getByLabel('Example scenario', { exact: true }).selectOption('future');
+    await visible(page.getByRole('button', { name: 'Advance example clock by 10 minutes', exact: false }));
+    await page.getByRole('button', { name: 'Advance example clock by 10 minutes', exact: false }).click();
+    await visible(page.getByRole('img', { name: '1 of 3 original commitments completed, 33%' }));
+    await page.getByLabel('Example scenario', { exact: true }).selectOption('rest');
+    await visible(page.getByText('No completion score.', { exact: true }));
+    assert.equal(await page.getByRole('img').count(), 0);
+    await checkWidth(page);
+    console.log('PASS protocol lab: signed reconstruction, conflicts, unsigned resolution, missing parent, future-clock policy, rest');
+    await context.close();
+  }
   assert.deepEqual(errors, [], 'No uncaught browser errors');
   console.log('All browser scenarios passed.');
 } finally { await browser?.close(); server?.kill(); }

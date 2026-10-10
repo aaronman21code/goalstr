@@ -29,3 +29,9 @@ Live stages add `protocol/accountability/v1` and scoped NIP adapters. Verified e
 The project is host-portable. Vercel builds `dist` from source, with SPA deep-link rewrites. CSP in Stage 1 allows only same-origin resources. Future WSS relay support must change the policy deliberately without enabling arbitrary scripts or leaking connection credentials.
 
 The stable Practice database is separate from future account-scoped live stores. Later releases must include versioned migrations and rollback compatibility notes. A complete source ZIP, hashes, removed paths, and changelog make manual GitHub updates reviewable.
+
+## Stage 2 protocol boundary
+
+`ProtocolView` is lazy-loaded and calls `learning/protocol-service.ts`. The service invokes the versioned codec, which verifies the envelope through the scoped NIP-01 adapter before schema/thread decoding. NIP-10 owns threading and the NIP-09 reader owns deletion target parsing. `domain/events/reconstruct.ts` consumes decoded records and reuses the existing pure accountability rules without writing to Practice storage. Typed `EventVerifierPort` and `AccountabilityCodec` interfaces carry plain data only.
+
+The protocol lab imports public signed fixtures, not their generating identities. It stores imported events and generated unsigned previews in component memory only. Actual relay transport/outbox/signers remain later-stage adapters. The vendored upstream crypto source is isolated under `vendor/`; only the NIP-01 adapter and test generator import it. Domain compilation includes both accountability and event graph modules and forbids SDK/React/Zod imports.

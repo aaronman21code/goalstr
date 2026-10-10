@@ -1,6 +1,6 @@
 # Updating Goalstr
 
-Keep one `goalstr` GitHub repo and one Vercel project.
+Keep one `goalstr` GitHub repo and one Vercel project. Current release: Stage 2 / 0.2.0. See `docs/STAGE_02.md` for this update; no removals or storage migration are required from Goalstr 0.1.1.
 
 ## First stage
 

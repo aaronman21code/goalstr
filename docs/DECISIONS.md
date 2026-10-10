@@ -35,3 +35,15 @@ Stage 1 has no external media, analytics, signers, secrets, or relay requests. A
 ## D008 — Goalstr naming
 
 Goalstr is the product name; `goalstr` is the package/repository name. Version 0.1.1 is a Stage 1 branding update, not a new protocol milestone. A G shaped progress ring anchors the existing dark/mint design. Product metadata, UI, backup filenames, docs, and future discovery tags use the new name. Preserve the generic domain/payload vocabulary and existing local database identifier; no data migration is required.
+
+## D009 — Stage 2 verification dependency
+
+Package tarball/registry access remained blocked. Stage 2 uses a complete retrieved upstream noble-secp256k1 source snapshot, generated JS/declarations, MIT attribution, checksum pinning, and all 19 official BIP-340 vectors. No cryptographic implementation is written by Goalstr. This is not a claimed release/commit/package install. `vendor/README.md` and `PROVENANCE.json` record exact scope and retrieval. Official nostr-tools repository metadata was reviewed (`nostr-tools` 2.25.2); relay/pool, NIP-44, and NIP-46 package/runtime compatibility remain future integration checks.
+
+## D010 — Stage 2 local inspector
+
+A lazy-loaded optional route verifies public fixture/imported events and reconstructs them locally. Unsigned Practice/resolution previews are explicitly labeled and never signed or published. No identity keys are handled and no Practice store mutation occurs. Unknown formats remain readable; malformed state cannot mutate progress. Source contracts and validation are frozen before live reads/writes.
+
+## D011 — Baseline and remaining UI evidence
+
+The supplied GitHub/deployed URLs could not be retrieved from this environment, so the update starts from the previously generated Goalstr 0.1.1 source. The user retains deployment ownership. Node/contract/security-boundary checks pass; the actual browser/hosted UI gate remains pending until the included CI browser scenarios or deployed checks run.

@@ -1,4 +1,5 @@
-// Implementations are introduced by later stages. No SDK objects cross these interfaces.
+import type { DecodedEvent, RootPayload, StatePayload, StateType } from '../events/types.ts';
+// Plain data contracts only; SDK objects never cross these interfaces.
 export interface UnsignedEvent {
     pubkey: string;
     created_at: number;
@@ -9,6 +10,14 @@ export interface UnsignedEvent {
 export interface SignedEvent extends UnsignedEvent {
     id: string;
     sig: string;
+}
+export interface EventVerifierPort {
+    verify(raw: unknown, destinationLimit?: number): Promise<{ event: SignedEvent | null; reason: string }>;
+}
+export interface AccountabilityCodec {
+    encodeRoot(type: 'plan' | 'rest', payload: RootPayload, pubkey: string, createdAt: number, destinationLimit?: number): UnsignedEvent;
+    encodeState(type: StateType, payload: StatePayload, pubkey: string, createdAt: number, relayHint?: string, destinationLimit?: number): UnsignedEvent;
+    decode(raw: unknown): Promise<DecodedEvent>;
 }
 export interface SignerPort {
     connect(): Promise<void>;

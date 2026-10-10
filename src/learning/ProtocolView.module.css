@@ -1,0 +1,54 @@
+.page { min-width: 0; }
+.scope { display: flex; align-items: flex-start; gap: 12px; color: var(--mint); margin: 0 0 22px; }
+.scope svg { flex-shrink: 0; margin-top: 3px; }
+.scope p { margin: 0; font-size: 13px; color: var(--muted); }
+.scope strong { color: var(--text); }
+.controls { padding: 24px; }
+.controlRow { display: flex; gap: 12px; align-items: center; margin-bottom: 15px; }
+.controlRow select { flex: 1; min-width: 0; }
+.columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.columns > section { min-width: 0; padding: 23px; }
+.columns h2 { font-size: 18px; }
+.overview { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 16px 0 22px; }
+.overview :global(.ring), .overview :global(.rest-emblem) { width: 130px; height: 130px; flex-shrink: 0; }
+.overview h3 { font-size: 19px; margin-bottom: 5px; }
+.tasks { list-style: none; padding: 0; margin: 0 0 24px; }
+.tasks li { display: flex; align-items: flex-start; gap: 10px; margin: 14px 0; }
+.tasks li svg { flex-shrink: 0; margin-top: 4px; }
+.tasks strong, .tasks span { display: block; }
+.tasks strong { font-size: 13px; font-weight: 550; }
+.fulfilled { color: var(--mint); }
+.unfulfilled { color: var(--subtle); }
+.warnings { border: 1px solid #62503a; background: #29251e; border-radius: 13px; padding: 16px 20px; margin-bottom: 22px; color: var(--warm); font-size: 13px; }
+.warnings p { margin: 0 0 8px; }
+.warnings p:last-child { margin: 0; }
+.eventList { list-style: none; padding: 0; margin: 18px 0; max-height: 310px; overflow-y: auto; }
+.eventList li { margin: 6px 0; }
+.eventRow { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 12px; min-height: 58px; text-align: left; padding: 10px 12px; border: 1px solid var(--line); background: var(--bg); border-radius: 9px; font-size: 12px; }
+.eventRow > span:first-child { font-weight: 600; }
+.eventRow > span:last-child { grid-column: 1 / -1; font-size: 10px; }
+.eventRow code { font-size: 10px; color: var(--muted); }
+.active { border-color: #648f72; background: var(--mint-dim); }
+.eventDetail { padding-top: 18px; border-top: 1px solid var(--line); min-width: 0; }
+.facts { margin: 0 0 18px; }
+.facts > div { display: flex; justify-content: space-between; gap: 8px; font-size: 11px; }
+.facts dt { color: var(--subtle); }
+.facts dd { margin: 0; }
+.narrative { font-size: 12px; overflow-wrap: anywhere; color: var(--muted); }
+.code { font-size: 10px; line-height: 1.6; background: var(--bg); padding: 14px; border: 1px solid var(--line); border-radius: 9px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 500px; overflow-y: auto; }
+.timeline { padding: 0; list-style: none; border-top: 1px solid var(--line); margin-top: 20px; }
+.timeline li { display: flex; flex-wrap: wrap; gap: 7px 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+.timeline code { color: var(--subtle); font-size: 10px; }
+.identifier { display: block; overflow-wrap: anywhere; font-size: 10px; padding: 8px 0; }
+.alternates { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 20px; }
+.branchList { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 22px; }
+.branchList > div { padding: 16px; border: 1px solid var(--line); border-radius: 12px; }
+.branchList code, .branchList strong { display: block; font-size: 12px; margin-bottom: 8px; }
+.preview { border-left: 2px solid var(--mint); padding: 14px 0 0 18px; margin-top: 22px; }
+.preview > p { font-size: 13px; }
+.preview > span { margin-bottom: 15px; }
+.reply { border-bottom: 1px solid var(--line); padding: 12px 0; font-size: 13px; overflow-wrap: anywhere; }
+.reply:last-child { border: 0; }
+@media (max-width: 680px) { .columns { grid-template-columns: 1fr; gap: 0; } .controlRow { flex-direction: column; align-items: stretch; } .overview { flex-wrap: nowrap; } .columns > section { padding: 20px; } }
+@media (max-width: 359px) { .overview { flex-wrap: wrap; } }
+@media print { .scope, .controls, .eventList { display: none; } .columns { display: block; } .code { max-height: none; color: #111; background: white; } .warnings { color: #111; background: white; border-color: #ccc; } }

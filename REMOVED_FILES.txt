@@ -1,3 +1,4 @@
-# Only needed when updating the original 0.1.0 ZIP. Skip on a new repo.
-docs/reference/Daily_Accountability_Prototype_PRD.md
-docs/reference/Daily_Accountability_Prototype_Build_Plan.md
+# No files removed since Goalstr Stage 1 (0.1.1).
+# Historical cleanup only if using the earlier 0.1.0 release:
+# docs/reference/Daily_Accountability_Prototype_PRD.md
+# docs/reference/Daily_Accountability_Prototype_Build_Plan.md
